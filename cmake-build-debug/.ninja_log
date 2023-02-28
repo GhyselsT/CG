@@ -1,0 +1,8 @@
+# ninja log v5
+26	530	6992960929148680	CMakeFiles/engine.dir/draw2DLines.cpp.obj	79027f4fc6585415
+0	671	6992960930594037	CMakeFiles/engine.dir/easy_image.cc.obj	5f97c61ecaf64984
+15	743	6992960931310584	CMakeFiles/engine.dir/engine.cc.obj	4274fc9f3d9a5136
+46	776	6992960931641431	CMakeFiles/engine.dir/Functies.cpp.obj	4da11ac1b5217a36
+36	1019	6992960934055340	CMakeFiles/engine.dir/l_parser.cc.obj	70002e712768261c
+56	1315	6992960936997303	CMakeFiles/engine.dir/ini_configuration.cc.obj	7e030f10999c596a
+1315	2002	6992960943809567	engine.exe	2b328cc0f388f35f
