@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="engine"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="engine">
+				<Option output="C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/engine.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Qt/Tools/mingw810_64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Qt/Tools/mingw810_64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Qt/Tools/mingw810_64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Qt/Tools/mingw810_64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Qt/Tools/mingw810_64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Qt/Tools/mingw810_64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 engine"/>
+					<CompileFile command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="engine/fast">
+				<Option output="C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/engine.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Qt/Tools/mingw810_64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Qt/Tools/mingw810_64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Qt/Tools/mingw810_64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Qt/Tools/mingw810_64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Qt/Tools/mingw810_64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Qt/Tools/mingw810_64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 engine/fast"/>
+					<CompileFile command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe -f &quot;C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/Color.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/Face.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/Figure.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/Functies.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/Functies.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/Line2D.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/Point2D.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/draw2DLines.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/draw2DLines.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/easy_image.cc">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/easy_image.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/engine.cc">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/ini_configuration.cc">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/ini_configuration.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/l_parser.cc">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/l_parser.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
