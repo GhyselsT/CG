@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/thomg/Documents/SCHOOL/sem2/CG
+# Install script for directory: C:/Users/thomg/Documents/SCHOOL/sem2/GRAPHICS
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,18 +39,18 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "C:/Users/thomg/Documents/SCHOOL/sem2/CG/engine.exe")
+   "C:/Users/thomg/Documents/SCHOOL/sem2/GRAPHICS/engine.exe")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "C:/Users/thomg/Documents/SCHOOL/sem2/CG" TYPE EXECUTABLE FILES "C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/engine.exe")
-  if(EXISTS "$ENV{DESTDIR}/C:/Users/thomg/Documents/SCHOOL/sem2/CG/engine.exe" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/C:/Users/thomg/Documents/SCHOOL/sem2/CG/engine.exe")
+  file(INSTALL DESTINATION "C:/Users/thomg/Documents/SCHOOL/sem2/GRAPHICS" TYPE EXECUTABLE FILES "C:/Users/thomg/Documents/SCHOOL/sem2/GRAPHICS/cmake-build-debug/engine.exe")
+  if(EXISTS "$ENV{DESTDIR}/C:/Users/thomg/Documents/SCHOOL/sem2/GRAPHICS/engine.exe" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/C:/Users/thomg/Documents/SCHOOL/sem2/GRAPHICS/engine.exe")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "C:/Qt/Tools/mingw810_64/bin/strip.exe" "$ENV{DESTDIR}/C:/Users/thomg/Documents/SCHOOL/sem2/CG/engine.exe")
+      execute_process(COMMAND "C:/Qt/Tools/mingw810_64/bin/strip.exe" "$ENV{DESTDIR}/C:/Users/thomg/Documents/SCHOOL/sem2/GRAPHICS/engine.exe")
     endif()
   endif()
 endif()
@@ -63,5 +63,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/thomg/Documents/SCHOOL/sem2/CG/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/thomg/Documents/SCHOOL/sem2/GRAPHICS/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
