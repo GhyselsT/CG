@@ -66,7 +66,7 @@ Lines2D drawLSystem(const LParser::LSystem2D &l_system, Color color){
     Line2D lijn{};
     Lines2D listLijnen;
 
-    //lsyste; haakjes
+    //lsystem haakjes
     stack<Point2D> savePunt;
     stack<double> saveHoek;
 
