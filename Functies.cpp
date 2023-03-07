@@ -15,7 +15,6 @@ Color VecToColor(vector<double> punten){
     kleuren.red = punten[0];
     kleuren.green = punten[1];
     kleuren.blue = punten[2];
-
     return kleuren;
 }
 
