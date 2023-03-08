@@ -31,10 +31,12 @@ Matrix translate(const Vector3D &vector);
 
 void applyTransformation(Figure &fig, const Matrix &m);
 
-void toPolar(const Vector3D &point);
+
 
 Matrix eyePointTrans(const Vector3D &eyepoint);
 
 void applyTransformation(Figures3D &figs, const Matrix &m);
+
+void toPolar(const Vector3D &point);
 
 #endif //ENGINE_FUNCTIES_H

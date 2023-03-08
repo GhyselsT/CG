@@ -70,6 +70,10 @@ img::EasyImage generate_image(const ini::Configuration &configuration) {
     //Wireframe
     if (type == "Wireframe"){
         ///teken het wireframe
+        tuple<double> eye = configuration["General"]["eye"];
+        int nrFigures = configuration["General"]["nrFigures"];
+
+        string wireframetype = configuration["Figure0"]["type"];
 
     }
 }

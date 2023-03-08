@@ -106,6 +106,62 @@ Lines2D drawLSystem(const LParser::LSystem2D &l_system, Color color){
     return listLijnen;
 }
 
+Matrix scaleFigure(const double scale) {
+    Matrix m;
+    m(1,1) *= scale;
+    m(2,2) *= scale;
+    m(3,3) *= scale;
+    m(4,4) = 1;
+    return m;
+}
+
+Matrix rotateX(const double angle) {
+    Matrix m;
+    double hoek = GradToRad(angle);
+    //constants
+    m(1,1) = 1;
+    m(4,4) = 1;
+    //angles
+    m(2,2) = cos(hoek);
+    m(2,3) = sin(hoek);
+    m(3,2) = -sin(hoek);
+    m(3,3) = cos(hoek);
+
+    return m;
+}
+
+Matrix rotateY(const double angle) {
+    Matrix m;
+    double hoek = GradToRad(angle);
+    //constants
+    m(2,2) = 1;
+    m(4,4) = 1;
+    //angles
+    m(1,1) = cos(hoek);
+    m(1,3) = -sin(hoek);
+    m(3,1) = sin(hoek);
+    m(3,3) = cos(hoek);
+
+    return m;
+}
+
+Matrix rotateZ(const double angle) {
+    Matrix m;
+    double hoek = GradToRad(angle);
+    //constants
+    m(3,3) = 1;
+    m(4,4) = 1;
+    //angles
+    m(1,1) = cos(hoek);
+    m(1,2) = sin(hoek);
+    m(2,1) = -sin(hoek);
+    m(2,2) = cos(hoek);
+
+    return m;
+}
+
+
+
 
 
 
