@@ -6,6 +6,7 @@
 #include "Point2D.h"
 
 #include "Functies.h"
+#include "vector3d.h"
 
 #include <fstream>
 #include <iostream>
@@ -74,6 +75,31 @@ img::EasyImage generate_image(const ini::Configuration &configuration) {
         int nrFigures = configuration["General"]["nrFigures"];
 
         string wireframetype = configuration["Figure0"]["type"];
+        double scale = configuration["Figure0"]["scale"];
+        double xangle = configuration["Figure0"]["rotateX"];
+        double yangle = configuration["Figure0"]["rotatey"];
+        double zangle = configuration["Figure0"]["rotatez"];
+        vector<double> center = configuration["Figure0"]["center"];
+
+        Color color = VecToColor(configuration["Figure0"]["color"]);
+        int nrPoints = configuration["Figure0"]["nrPoints"];
+        int nrLines = configuration["Figure0"]["nrLines"];
+
+        Figure figuur;
+        for (int i = 0; i < nrPoints; ++i) {
+            string s_2 = to_string(i);
+            vector<double> p = configuration["Figure0"]["Point"+s_2];
+
+            auto pvec = Vector3D::point(p[0],p[1],p[2]);
+            figuur.points.emplace_back(pvec);
+        }
+
+        for (int i = 0; i < nrLines; ++i) {
+            Face f;
+            string s_2 = to_string(i);
+            f.point_indexes = configuration["Figure0"]["Line"+s_2];
+            figuur.faces.push_back(f);
+        }
 
     }
 }

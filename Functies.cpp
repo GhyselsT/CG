@@ -108,9 +108,9 @@ Lines2D drawLSystem(const LParser::LSystem2D &l_system, Color color){
 
 Matrix scaleFigure(const double scale) {
     Matrix m;
-    m(1,1) *= scale;
-    m(2,2) *= scale;
-    m(3,3) *= scale;
+    m(1,1) = scale;
+    m(2,2) = scale;
+    m(3,3) = scale;
     m(4,4) = 1;
     return m;
 }
@@ -159,6 +159,96 @@ Matrix rotateZ(const double angle) {
 
     return m;
 }
+
+Matrix translate(const Vector3D &vector) {
+    Matrix m;
+    //constants
+    m(1,1) = 1;
+    m(2,2) = 1;
+    m(3,3) = 1;
+    m(4,4) = 1;
+    //vector
+    m(4,1) = vector.x;
+    m(4,2) = vector.y;
+    m(4,3) = vector.z;
+
+    return m;
+}
+
+Matrix allTrans(const double scale, const double xangle, const double yangle, const double zangle, const Vector3D &vector) {
+    Matrix m;
+    m = scaleFigure(scale) * rotateX(xangle) * rotateY(yangle) * rotateZ(zangle) * translate(vector);
+    return m;
+}
+
+void applyTransformation(Figure &fig, const Matrix &m) {
+    for (const auto& punt:fig.points) {
+        punt * m;
+    }
+}
+
+
+void toPolar(const Vector3D &point,double &theta, double &phi, double &r) {
+    r = sqrt(pow(point.x,2) + pow(point.y,2) + pow(point.z,2));
+    theta = atan2(point.y,point.x);
+    phi = acos(point.z/r);
+}
+
+Matrix eyePointTrans(const Vector3D &eyepoint) {
+    double theta;
+    double phi;
+    double r;
+    toPolar(eyepoint, theta, phi, r);
+    Matrix m;
+    m(1,1) = -sin(theta);
+    m(1,2) = -cos(theta) * cos(phi);
+    m(1,3) = cos(theta) * sin(phi);
+
+    m(2,1) = cos(theta);
+    m(2,2) = -sin(theta) * cos(phi);
+    m(2,3) = sin(theta) * sin(phi);
+
+    m(3,2) = sin(phi);
+    m(3,3) = cos(theta);
+
+    m(4,3) = -r;
+    m(4,4) = 1;
+
+    return m;
+}
+
+void applyTransformation(Figures3D &figs, const Matrix &m) {
+    for (auto item:figs) {
+        applyTransformation(item,m);
+    }
+}
+
+Point2D doProjection(const Vector3D &point, const double d) {
+    Point2D punt{};
+    punt.x = (d*point.x)/-point.z;
+    punt.y = (d*point.y)/-point.z;
+    return punt;
+}
+
+
+Lines2D doProjection(const Figures3D &fig) {
+    Lines2D lijnen;
+
+    for (auto item:fig) {
+        for (auto i:item.faces) {
+            Line2D lijn{};
+            int f= i.point_indexes[0];
+            int s = i.point_indexes[1];
+            lijn.p1 = doProjection(item.points[f],1);
+            lijn.p2 = doProjection((item.points[s]),1);
+            lijnen.emplace_back(lijn);
+        }
+    }
+    return lijnen;
+}
+
+
+
 
 
 

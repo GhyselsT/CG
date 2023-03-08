@@ -29,14 +29,22 @@ Matrix rotateZ(const double angle);
 
 Matrix translate(const Vector3D &vector);
 
+Matrix allTrans(const double scale, const double xangle, const double yangle,
+const double zangle, const Vector3D &vector);
+
 void applyTransformation(Figure &fig, const Matrix &m);
 
 
+void toPolar(const Vector3D &point,double &theta, double &phi, double &r);
 
 Matrix eyePointTrans(const Vector3D &eyepoint);
 
 void applyTransformation(Figures3D &figs, const Matrix &m);
 
-void toPolar(const Vector3D &point);
+Point2D doProjection(const Vector3D &point, const double d);
+
+Lines2D doProjection(const Figures3D &fig);
+
+
 
 #endif //ENGINE_FUNCTIES_H
