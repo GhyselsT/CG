@@ -71,7 +71,7 @@ img::EasyImage generate_image(const ini::Configuration &configuration) {
     //Wireframe
     if (type == "Wireframe"){
         ///teken het wireframe
-        tuple<double> eye = configuration["General"]["eye"];
+        vector<double> eye = configuration["General"]["eye"];
         int nrFigures = configuration["General"]["nrFigures"];
 
         string wireframetype = configuration["Figure0"]["type"];
@@ -93,12 +93,17 @@ img::EasyImage generate_image(const ini::Configuration &configuration) {
             auto pvec = Vector3D::point(p[0],p[1],p[2]);
             figuur.points.emplace_back(pvec);
         }
-
         for (int i = 0; i < nrLines; ++i) {
             Face f;
             string s_2 = to_string(i);
             f.point_indexes = configuration["Figure0"]["Line"+s_2];
             figuur.faces.push_back(f);
+        }
+
+        //
+        for (auto item:figuur.points) {
+            Matrix m = allTrans(scale,xangle,yangle,zangle,item);
+            applyTransformation(figuur,m);
         }
 
     }
