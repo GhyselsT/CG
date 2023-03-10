@@ -73,39 +73,45 @@ img::EasyImage generate_image(const ini::Configuration &configuration) {
         ///teken het wireframe
         vector<double> eye = configuration["General"]["eye"];
         int nrFigures = configuration["General"]["nrFigures"];
+        Figures3D figlist;
+        for (int i = 0; i < nrFigures; ++i) {
+            Figure figuur;
+            string endf = to_string(i);
+            string wireframetype = configuration["Figure" + endf]["type"];
+            double scale = configuration["Figure" + endf]["scale"];
+            double xangle = configuration["Figure" + endf]["rotateX"];
+            double yangle = configuration["Figure" + endf]["rotateY"];
+            double zangle = configuration["Figure" + endf]["rotateZ"];
+            vector<double> center = configuration["Figure" + endf]["center"];
 
-        string wireframetype = configuration["Figure0"]["type"];
-        double scale = configuration["Figure0"]["scale"];
-        double xangle = configuration["Figure0"]["rotateX"];
-        double yangle = configuration["Figure0"]["rotatey"];
-        double zangle = configuration["Figure0"]["rotatez"];
-        vector<double> center = configuration["Figure0"]["center"];
+            Color color = VecToColor(configuration["Figure"+endf]["color"]);
+            int nrPoints = configuration["Figure" + endf]["nrPoints"];
+            int nrLines = configuration["Figure" + endf]["nrLines"];
+            figuur.color = color;
 
-        Color color = VecToColor(configuration["Figure0"]["color"]);
-        int nrPoints = configuration["Figure0"]["nrPoints"];
-        int nrLines = configuration["Figure0"]["nrLines"];
-
-        Figure figuur;
-        for (int i = 0; i < nrPoints; ++i) {
-            string s_2 = to_string(i);
-            vector<double> p = configuration["Figure0"]["Point"+s_2];
-
-            auto pvec = Vector3D::point(p[0],p[1],p[2]);
-            figuur.points.emplace_back(pvec);
-        }
-        for (int i = 0; i < nrLines; ++i) {
-            Face f;
-            string s_2 = to_string(i);
-            f.point_indexes = configuration["Figure0"]["Line"+s_2];
-            figuur.faces.push_back(f);
-        }
-
-        //
-        for (auto item:figuur.points) {
-            Matrix m = allTrans(scale,xangle,yangle,zangle,item);
+            for (int p = 0; p < nrPoints; ++p) {
+                string s_2 = to_string(p);
+                vector<double> pt = configuration["Figure"+endf]["point" + s_2];
+                auto pvec = Vector3D::point(pt[0], pt[1], pt[2]);
+                figuur.points.emplace_back(pvec);
+            }
+            for (int l = 0; l < nrLines; ++l) {
+                Face f;
+                string s_2 = to_string(l);
+                f.point_indexes = configuration["Figure"+endf]["line" + s_2];
+                figuur.faces.push_back(f);
+            }
+            auto m = allTrans(scale,xangle,yangle,zangle, VecToVec3d(center));
             applyTransformation(figuur,m);
-        }
+            figlist.emplace_back(figuur);
 
+        }
+        auto v = eyePointTrans(VecToVec3d(eye));
+        applyTransformation(figlist,v);
+        auto pp = doProjection(figlist);
+
+        draw2DLines teken;
+        return teken.drawlines(pp,size, backgroundcolor);
     }
 }
 
@@ -126,6 +132,7 @@ int main(int argc, char const *argv[]) {
                 std::ifstream fin(fileName);
                 fin >> conf;
                 fin.close();
+                cout << fileName;
             }
             catch (ini::ParseException &ex) {
                 std::cerr << "Error parsing file: " << fileName << ": " << ex.what() << std::endl;

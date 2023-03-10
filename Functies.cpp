@@ -182,8 +182,8 @@ Matrix allTrans(const double scale, const double xangle, const double yangle, co
 }
 
 void applyTransformation(Figure &fig, const Matrix &m) {
-    for (const auto& punt:fig.points) {
-        punt * m;
+    for (auto& punt:fig.points) {
+        punt *= m;
     }
 }
 
@@ -218,7 +218,7 @@ Matrix eyePointTrans(const Vector3D &eyepoint) {
 }
 
 void applyTransformation(Figures3D &figs, const Matrix &m) {
-    for (auto item:figs) {
+    for (auto &item:figs) {
         applyTransformation(item,m);
     }
 }
@@ -241,10 +241,19 @@ Lines2D doProjection(const Figures3D &fig) {
             int s = i.point_indexes[1];
             lijn.p1 = doProjection(item.points[f],1);
             lijn.p2 = doProjection((item.points[s]),1);
+            lijn.color = item.color;
             lijnen.emplace_back(lijn);
         }
     }
     return lijnen;
+}
+
+Vector3D VecToVec3d(vector<double> center) {
+    Vector3D output;
+    output.x = center[0];
+    output.y = center[1];
+    output.z = center[2];
+    return output;
 }
 
 

@@ -45,6 +45,8 @@ Point2D doProjection(const Vector3D &point, const double d);
 
 Lines2D doProjection(const Figures3D &fig);
 
+Vector3D VecToVec3d(vector<double> center);
+
 
 
 #endif //ENGINE_FUNCTIES_H

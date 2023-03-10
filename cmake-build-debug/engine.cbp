@@ -168,6 +168,12 @@
 		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/l_parser.h">
 			<Option target="engine"/>
 		</Unit>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/vector3d.cc">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/vector3d.h">
+			<Option target="engine"/>
+		</Unit>
 		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
