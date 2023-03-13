@@ -27,27 +27,28 @@ Lines2D drawLSystem(const LParser::LSystem2D &l_system, Color color){
     unsigned int iterations = l_system.get_nr_iterations();
     string draw;
     //looped door het het aantal iterations
-    for (int i = 1; i <= iterations; ++i) {
-        draw = "";
-        //looped door de initiator string
-        for (char j : initiator) {
-            if (j == '+'){
-                draw.append("+");
+    if (iterations == 0){
+        draw = initiator;
+    }
+    else {
+        for (int i = 1; i <= iterations; ++i) {
+            draw = "";
+            //looped door de initiator string
+            for (char j: initiator) {
+                if (j == '+') {
+                    draw.append("+");
+                } else if (j == '-') {
+                    draw.append("-");
+                } else if (j == '(') {
+                    draw.append("(");
+                } else if (j == ')') {
+                    draw.append(")");
+                } else {
+                    draw.append(l_system.get_replacement(j));
+                }
             }
-            else if (j == '-'){
-                draw.append("-");
-            }
-            else if(j == '('){
-                draw.append("(");
-            }
-            else if(j == ')'){
-                draw.append(")");
-            }
-            else {
-                draw.append(l_system.get_replacement(j));
-            }
+            initiator = draw;
         }
-        initiator = draw;
     }
     //cout << draw << endl;
 
