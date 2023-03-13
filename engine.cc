@@ -132,7 +132,6 @@ int main(int argc, char const *argv[]) {
                 std::ifstream fin(fileName);
                 fin >> conf;
                 fin.close();
-                cout << fileName;
             }
             catch (ini::ParseException &ex) {
                 std::cerr << "Error parsing file: " << fileName << ": " << ex.what() << std::endl;
