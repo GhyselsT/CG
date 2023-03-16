@@ -120,6 +120,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/3DFiguren.cpp">
+			<Option target="engine"/>
+		</Unit>
 		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/Color.h">
 			<Option target="engine"/>
 		</Unit>

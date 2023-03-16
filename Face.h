@@ -12,7 +12,14 @@ using namespace std;
 
 class Face {
 public:
+
+    Face();
+
     vector<int> point_indexes;
+
+    Face(vector<int> input){
+        point_indexes = input;
+    }
 };
 
 

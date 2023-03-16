@@ -173,6 +173,30 @@ engine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make CMakeFiles/engine.dir/build
 .PHONY : engine/fast
 
+3DFiguren.obj: 3DFiguren.cpp.obj
+.PHONY : 3DFiguren.obj
+
+# target to build an object file
+3DFiguren.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make CMakeFiles/engine.dir/3DFiguren.cpp.obj
+.PHONY : 3DFiguren.cpp.obj
+
+3DFiguren.i: 3DFiguren.cpp.i
+.PHONY : 3DFiguren.i
+
+# target to preprocess a source file
+3DFiguren.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make CMakeFiles/engine.dir/3DFiguren.cpp.i
+.PHONY : 3DFiguren.cpp.i
+
+3DFiguren.s: 3DFiguren.cpp.s
+.PHONY : 3DFiguren.s
+
+# target to generate assembly for a file
+3DFiguren.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make CMakeFiles/engine.dir/3DFiguren.cpp.s
+.PHONY : 3DFiguren.cpp.s
+
 Functies.obj: Functies.cpp.obj
 .PHONY : Functies.obj
 
@@ -354,6 +378,9 @@ help:
 	@echo ... list_install_components
 	@echo ... rebuild_cache
 	@echo ... engine
+	@echo ... 3DFiguren.obj
+	@echo ... 3DFiguren.i
+	@echo ... 3DFiguren.s
 	@echo ... Functies.obj
 	@echo ... Functies.i
 	@echo ... Functies.s

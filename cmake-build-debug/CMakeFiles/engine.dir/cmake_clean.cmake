@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/engine.dir/3DFiguren.cpp.obj"
+  "CMakeFiles/engine.dir/3DFiguren.cpp.obj.d"
   "CMakeFiles/engine.dir/Functies.cpp.obj"
   "CMakeFiles/engine.dir/Functies.cpp.obj.d"
   "CMakeFiles/engine.dir/draw2DLines.cpp.obj"
