@@ -3,6 +3,7 @@
 //
 
 #define _USE_MATH_DEFINES
+#include "Functies.h"
 #include "Figure.h"
 #include "Face.h"
 
@@ -167,9 +168,29 @@ Figure createSphere(const double radius, const int n){
 
     Figure ico = createIcosahedron();
     for (int i = 0; i < n; ++i) {
+        for(auto f: ico.faces){
 
+
+        }
     }
     return sphere;
+}
+
+Figure createCone(const int n,const double h){
+    Figure cone;
+    for (int i = 0; i < n; ++i) {
+        Vector3D punt;
+        if (i == 0){
+            punt.x = cos(0);
+            punt.y = sin(0);
+            punt.z = 0;
+        }
+        else{
+            punt.x = cos((2*i*M_PI) / n);
+            punt.y = sin((2*i*M_PI) / n);
+            punt.z = 0;
+        }
+    }
 }
 
 
