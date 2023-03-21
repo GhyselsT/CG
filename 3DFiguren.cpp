@@ -123,14 +123,14 @@ Figure createIcosahedron(){
 
     return i;
 }
-Vector3D GetMidTriangle(vector<Vector3D> points){
+Vector3D GetMid(vector<Vector3D> points,const int corners){
     double x = 0.0, y = 0.0 , z = 0.0;
-    for (int i = 0; i < 3; ++i) {
+    for (int i = 0; i < corners; ++i) {
         x += points[i].x;
         y += points[i].y;
         z += points[i].z;
     }
-    x/=3, y/=3, z/=3;
+    x/=corners, y/=corners, z/=corners;
     return Vector3D::point(x,y,z);
 }
 
@@ -143,7 +143,7 @@ Figure createDodecahedron(){
         for(auto item : face.point_indexes){
             p.emplace_back(ico.points[item]);
         }
-        d.points.emplace_back(GetMidTriangle(p));
+        d.points.emplace_back(GetMid(p,3));
     }
 
     //Faces emplacen
@@ -168,8 +168,21 @@ Figure createSphere(const double radius, const int n){
 
     Figure ico = createIcosahedron();
     for (int i = 0; i < n; ++i) {
+        //points emplace
         for(auto f: ico.faces){
+            vector<Vector3D> point1, point2, point3;
+            point1.emplace_back(ico.points[0]);
+            point2.emplace_back(ico.points[1]);
+            point3.emplace_back(ico.points[2]);
 
+            Vector3D D,E,F;
+            D = GetMid(point1,2);
+            E = GetMid(point2,2);
+            F = GetMid(point3,2);
+
+            sphere.points.emplace_back(D);
+            sphere.points.emplace_back(E);
+            sphere.points.emplace_back(F);
 
         }
     }
@@ -178,19 +191,17 @@ Figure createSphere(const double radius, const int n){
 
 Figure createCone(const int n,const double h){
     Figure cone;
-    for (int i = 0; i < n; ++i) {
-        Vector3D punt;
-        if (i == 0){
-            punt.x = cos(0);
-            punt.y = sin(0);
-            punt.z = 0;
-        }
-        else{
-            punt.x = cos((2*i*M_PI) / n);
-            punt.y = sin((2*i*M_PI) / n);
-            punt.z = 0;
-        }
+
+    for (int i = 0; i < n; ++i){
+        //points emplacen
+        cone.points.emplace_back(Vector3D::point(cos(2 * i * M_PI / n),sin(2 * i * M_PI / n),0));
+        //faces emplacen
+        cone.faces.emplace_back((Face({i, (i+1)%n, n})));
     }
+    //top emplacen
+    cone.points.emplace_back(Vector3D::point(0,0,h));
+
+    return cone;
 }
 
 
