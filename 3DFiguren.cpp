@@ -205,3 +205,18 @@ Figure createCone(const int n,const double h){
 }
 
 
+Figure createCylinder(const int n, const double h){
+    Figure c;
+    for (int i = 0; i < n; ++i) {
+        //points
+        //bottom
+        c.points.emplace_back(Vector3D::point(cos(2*i*M_PI/n), sin(2*i*M_PI/n), 0));
+        //top
+        c.points.emplace_back(Vector3D::point(cos(2*i*M_PI/n), sin(2*i*M_PI/n), h));
+    }
+    for (int i = 0; i < 2*n; ++i) {
+        c.faces.emplace_back(Face({i,(i+1)%(2*n),...,...}))
+
+    }
+}
+
