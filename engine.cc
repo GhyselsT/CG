@@ -149,6 +149,17 @@ img::EasyImage generate_image(const ini::Configuration &configuration) {
                 applyTransformation(figuur, m);
                 figlist.emplace_back(figuur);
             }
+            else if(wireframetype == "Torus"){
+                const double r = configuration["Figure" + endf]["r"];
+                const double R = configuration["Figure" + endf]["R"];
+                const int n = configuration["Figure" + endf]["n"];
+                const int m = configuration["Figure" + endf]["m"];
+                figuur = createTorus(r,R,n,m);
+                figuur.color = color;
+                auto v = allTrans(scale, xangle, yangle, zangle, VecToVec3d(center));
+                applyTransformation(figuur, v);
+                figlist.emplace_back(figuur);
+            }
             //random dink tekenen
             else {
                 figuur.color = color;

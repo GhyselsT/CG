@@ -145,7 +145,7 @@ Figure createDodecahedron(){
         }
         d.points.emplace_back(GetMid(p,3));
     }
-    d.faces.clear();
+
     //Faces emplacen
     d.faces.emplace_back(Face({0,1,2,3,4}));
     d.faces.emplace_back(Face({0,5,6,7,1}));
@@ -235,3 +235,22 @@ Figure createCylinder(const int n, const double h){
     return c;
 }
 
+Figure createTorus(const double r,const double R,const int n, const int m) {
+    Figure torus;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            //points
+            double u = (2 * i * M_PI) / n;
+            double v = (2 * j * M_PI) / m;
+
+
+            Vector3D point = Vector3D::point((R + r * cos(v)) * cos(u), (R + r * cos(v)) * sin(u), r * sin(v));
+            torus.points.push_back(point);
+
+            //faces
+            Face face = Face({i * n + j, ((i + 1) % n) * n + j, ((i + 1) % n) * n + (j + 1) % m, i * n + (j + 1) % n});
+            torus.faces.push_back(face);
+        }
+    }
+    return torus;
+}
