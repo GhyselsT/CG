@@ -168,22 +168,30 @@ Figure createSphere(const double radius, const int n){
 
     Figure ico = createIcosahedron();
     for (int i = 0; i < n; ++i) {
-        //points emplace
         for(auto f: ico.faces){
-            vector<Vector3D> point1, point2, point3;
-            point1.emplace_back(ico.points[0]);
-            point2.emplace_back(ico.points[1]);
-            point3.emplace_back(ico.points[2]);
-
+            Vector3D point1, point2, point3;
+            point1 = ico.points[f.point_indexes[0]];
+            point2 = ico.points[f.point_indexes[1]];
+            point3 = ico.points[f.point_indexes[2]];
             Vector3D D,E,F;
-            D = GetMid(point1,2);
-            E = GetMid(point2,2);
-            F = GetMid(point3,2);
-
+            D = (point1 + point2) / 2;
+            E = (point1 + point3) / 2;
+            F = (point2 + point3) / 2;
             sphere.points.emplace_back(D);
             sphere.points.emplace_back(E);
             sphere.points.emplace_back(F);
 
+            int aidx = f.point_indexes[0];
+            int bidx = f.point_indexes[1];
+            int cidx = f.point_indexes[2];
+            int didx = sphere.points.size() - 3;
+            int eidx = sphere.points.size() - 2;
+            int fidx = sphere.points.size() - 1;
+
+            sphere.faces.emplace_back(Face({aidx,didx,eidx}));
+            sphere.faces.emplace_back(Face({bidx,fidx,didx}));
+            sphere.faces.emplace_back(Face({cidx,eidx,fidx}));
+            sphere.faces.emplace_back(Face({didx,fidx,eidx}));
         }
     }
     return sphere;
@@ -211,12 +219,16 @@ Figure createCylinder(const int n, const double h){
         //points
         //bottom
         c.points.emplace_back(Vector3D::point(cos(2*i*M_PI/n), sin(2*i*M_PI/n), 0));
+        std::cout << *c.points.end() << std::endl;
         //top
         c.points.emplace_back(Vector3D::point(cos(2*i*M_PI/n), sin(2*i*M_PI/n), h));
-    }
-    for (int i = 0; i < 2*n; ++i) {
-        c.faces.emplace_back(Face({i,(i+1)%(2*n),...,...}))
+        std::cout << *c.points.end() << std::endl;
 
     }
+    for (int i = 0; i < 2*n; i+=2) {
+        c.faces.emplace_back(Face({i,(i+1)%(2*n),(i+3)%(2*n),(i+2)%(2*n)}));
+
+    }
+    return c;
 }
 

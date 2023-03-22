@@ -237,13 +237,15 @@ Lines2D doProjection(const Figures3D &fig) {
 
     for (auto item:fig) {
         for (auto i:item.faces) {
-            Line2D lijn{};
-            int f= i.point_indexes[0];
-            int s = i.point_indexes[1];
-            lijn.p1 = doProjection(item.points[f],1);
-            lijn.p2 = doProjection((item.points[s]),1);
-            lijn.color = item.color;
-            lijnen.emplace_back(lijn);
+            for (int p = 0; p < i.point_indexes.size(); ++p) {
+                Line2D lijn{};
+                int f = i.point_indexes[p];
+                int s = i.point_indexes[(p+1)%i.point_indexes.size()];
+                lijn.p1 = doProjection(item.points[f], 1);
+                lijn.p2 = doProjection((item.points[s]), 1);
+                lijn.color = item.color;
+                lijnen.emplace_back(lijn);
+            }
         }
     }
     return lijnen;

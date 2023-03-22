@@ -7,6 +7,8 @@
 
 #include "Functies.h"
 #include "vector3d.h"
+#include "3DFiguren.h"
+#include "Face.h"
 
 #include <fstream>
 #include <iostream>
@@ -84,28 +86,94 @@ img::EasyImage generate_image(const ini::Configuration &configuration) {
             double zangle = configuration["Figure" + endf]["rotateZ"];
             vector<double> center = configuration["Figure" + endf]["center"];
 
-            Color color = VecToColor(configuration["Figure"+endf]["color"]);
-            int nrPoints = configuration["Figure" + endf]["nrPoints"];
-            int nrLines = configuration["Figure" + endf]["nrLines"];
-            figuur.color = color;
+            Color color = VecToColor(configuration["Figure" + endf]["color"]);
 
-            for (int p = 0; p < nrPoints; ++p) {
-                string s_2 = to_string(p);
-                vector<double> pt = configuration["Figure"+endf]["point" + s_2];
-                auto pvec = Vector3D::point(pt[0], pt[1], pt[2]);
-                figuur.points.emplace_back(pvec);
+            if (wireframetype == "Cube") {
+                figuur = createKubus();
+                figuur.color = color;
+                auto m = allTrans(scale, xangle, yangle, zangle, VecToVec3d(center));
+                applyTransformation(figuur, m);
+                figlist.emplace_back(figuur);
             }
-            for (int l = 0; l < nrLines; ++l) {
-                Face f;
-                string s_2 = to_string(l);
-                f.point_indexes = configuration["Figure"+endf]["line" + s_2];
-                figuur.faces.push_back(f);
+            else if(wireframetype == "Tetrahedron"){
+                figuur = createTetrahedron();
+                figuur.color = color;
+                auto m = allTrans(scale, xangle, yangle, zangle, VecToVec3d(center));
+                applyTransformation(figuur, m);
+                figlist.emplace_back(figuur);
             }
-            auto m = allTrans(scale,xangle,yangle,zangle, VecToVec3d(center));
-            applyTransformation(figuur,m);
-            figlist.emplace_back(figuur);
+            else if (wireframetype == "Octahedron"){
+                figuur = createOctahedron();
+                figuur.color = color;
+                auto m = allTrans(scale, xangle, yangle, zangle, VecToVec3d(center));
+                applyTransformation(figuur, m);
+                figlist.emplace_back(figuur);
+            }
+            else if(wireframetype == "Icosahedron"){
+                figuur = createIcosahedron();
+                figuur.color = color;
+                auto m = allTrans(scale, xangle, yangle, zangle, VecToVec3d(center));
+                applyTransformation(figuur, m);
+                figlist.emplace_back(figuur);
+            }
+            else if(wireframetype == "Dodecahedron"){
+                figuur = createDodecahedron();
+                figuur.color = color;
+                auto m = allTrans(scale, xangle, yangle, zangle, VecToVec3d(center));
+                applyTransformation(figuur, m);
+                figlist.emplace_back(figuur);
+            }
+            else if(wireframetype == "Sphere"){
+                const int n = configuration["Figure"+endf]["n"];
+                figuur = createSphere(1.0,n);
+                figuur.color = color;
+                auto m = allTrans(scale, xangle, yangle, zangle, VecToVec3d(center));
+                applyTransformation(figuur, m);
+                figlist.emplace_back(figuur);
+            }
+            else if(wireframetype == "Cone"){
+                const double h = configuration["Figure"+endf]["height"];
+                const int n = configuration["Figure"+endf]["n"];
+                figuur = createCone(n,h);
+                figuur.color = color;
+                auto m = allTrans(scale, xangle, yangle, zangle, VecToVec3d(center));
+                applyTransformation(figuur, m);
+                figlist.emplace_back(figuur);
+            }
+            else if (wireframetype == "Cylinder"){
+                const double h = configuration["Figure"+endf]["height"];
+                const int n = configuration["Figure"+endf]["n"];
+                figuur = createCylinder(n,h);
+                figuur.color = color;
+                auto m = allTrans(scale, xangle, yangle, zangle, VecToVec3d(center));
+                applyTransformation(figuur, m);
+                figlist.emplace_back(figuur);
+            }
+            //random dink tekenen
+            else {
+                figuur.color = color;
+                int nrPoints = configuration["Figure" + endf]["nrPoints"];
+                int nrLines = configuration["Figure" + endf]["nrLines"];
+                for (int p = 0; p < nrPoints; ++p) {
+                    string s_2 = to_string(p);
+                    vector<double> pt = configuration["Figure" + endf]["point" + s_2];
+                    auto pvec = Vector3D::point(pt[0], pt[1], pt[2]);
+                    figuur.points.emplace_back(pvec);
+                }
+                for (int l = 0; l < nrLines; ++l) {
+                    Face f;
+                    string s_2 = to_string(l);
+                    f.point_indexes = configuration["Figure" + endf]["line" + s_2];
+                    figuur.faces.push_back(f);
+                }
+                auto m = allTrans(scale, xangle, yangle, zangle, VecToVec3d(center));
+                applyTransformation(figuur, m);
+                figlist.emplace_back(figuur);
+
+            }
 
         }
+
         auto v = eyePointTrans(VecToVec3d(eye));
         applyTransformation(figlist,v);
         auto pp = doProjection(figlist);
@@ -113,6 +181,7 @@ img::EasyImage generate_image(const ini::Configuration &configuration) {
         draw2DLines teken;
         return teken.drawlines(pp,size, backgroundcolor);
     }
+    return img::EasyImage();
 }
 
 int main(int argc, char const *argv[]) {

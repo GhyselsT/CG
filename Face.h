@@ -13,7 +13,7 @@ using namespace std;
 class Face {
 public:
 
-    Face();
+    Face(){};
 
     vector<int> point_indexes;
 
