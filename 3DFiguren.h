@@ -156,7 +156,7 @@ Figure createDodecahedron(){
     d.faces.emplace_back(Face({19,18,17,16,15}));
     d.faces.emplace_back(Face({19,14,13,12,18}));
     d.faces.emplace_back(Face({18,12,11,10,17}));
-    d.faces.emplace_back(Face({17,10,9,8,6}));
+    d.faces.emplace_back(Face({17,10,9,8,16}));
     d.faces.emplace_back(Face({16,8,7,6,15}));
     d.faces.emplace_back(Face({15,6,5,14,19}));
 
@@ -168,17 +168,26 @@ Figure createSphere(const double radius, const int n){
 
     Figure ico = createIcosahedron();
     for (int i = 0; i < n; ++i) {
+
         for(auto f: ico.faces){
-            Vector3D point1, point2, point3;
-            point1 = ico.points[f.point_indexes[0]];
-            point2 = ico.points[f.point_indexes[1]];
-            point3 = ico.points[f.point_indexes[2]];
+            Vector3D A, B, C, D, E, F;
+            A = ico.points[f.point_indexes[0]];
+            B = ico.points[f.point_indexes[1]];
+            C = ico.points[f.point_indexes[2]];
+            D = Vector3D::point((A.x + B.x) / 2,
+                                (A.y + B.y) / 2,
+                                (A.z + B.z) / 2);
+
+            E = Vector3D::point((A.x + C.x) / 2,
+                                (A.y + C.y) / 2,
+                                (A.z + C.z) / 2);
+
+            F = Vector3D::point((B.x + C.x) / 2,
+                                (B.y + C.y) / 2,
+                                (B.z + C.z) / 2);
 
 
-            Vector3D D,E,F;
-            D = (point1 + point2) / 2;
-            E = (point1 + point3) / 2;
-            F = (point2 + point3) / 2;
+
             sphere.points.emplace_back(D);
             sphere.points.emplace_back(E);
             sphere.points.emplace_back(F);
@@ -190,12 +199,16 @@ Figure createSphere(const double radius, const int n){
             int eidx = sphere.points.size() - 2;
             int fidx = sphere.points.size() - 1;
 
-
+            //in vector zetten
             sphere.faces.emplace_back(Face({aidx,didx,eidx}));
             sphere.faces.emplace_back(Face({bidx,fidx,didx}));
             sphere.faces.emplace_back(Face({cidx,eidx,fidx}));
             sphere.faces.emplace_back(Face({didx,fidx,eidx}));
         }
+
+    }
+    for (auto &p : sphere.points){
+        p = Vector3D::normalise(p);
     }
     return sphere;
 }
@@ -242,7 +255,6 @@ Figure createTorus(const double r,const double R,const int n, const int m) {
             //points
             double u = (2 * i * M_PI) / n;
             double v = (2 * j * M_PI) / m;
-
 
             Vector3D point = Vector3D::point((R + r * cos(v)) * cos(u), (R + r * cos(v)) * sin(u), r * sin(v));
             torus.points.push_back(point);
