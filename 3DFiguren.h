@@ -8,6 +8,7 @@
 #include "Face.h"
 
 #include "cmath"
+#include <stack>
 
 #include "iostream"
 
@@ -265,4 +266,62 @@ Figure createTorus(const double r,const double R,const int n, const int m) {
         }
     }
     return torus;
+}
+
+Lines2D draw3Dlsystem(const LParser::LSystem3D &sys,const vector<double>& Color){
+    string initiator = sys.get_initiator();
+    unsigned int iterations = sys.get_nr_iterations();
+    string draw;
+    if (iterations == 0){
+        draw = initiator;
+    }
+    else{
+        for (int i = 1; i <iterations ; ++i) {
+            draw="";
+            for(char j : initiator){
+                if (j=='+'){
+                    draw.append("+");
+                }else if(j =='-'){
+                    draw.append("-");
+                }else if (j == '(') {
+                    draw.append("(");
+                }else if (j == ')') {
+                    draw.append(")");
+                }else if (j == '/') {
+                    draw.append("/");
+                }else if (j == '\\') {
+                    draw.append("\\");
+                }else if (j == '&') {
+                    draw.append("&");
+                }else if (j == '|') {
+                    draw.append("|");
+                }else if (j == '^'){
+                    draw.append("^");
+                }
+            }
+            initiator = draw;
+        }
+    }
+
+    Vector3D currentpoint;
+    currentpoint.x = 0;
+    currentpoint.y = 0;
+    currentpoint.z = 0;
+    double currenangle = sys.get_angle() * M_PI;
+
+    stack<pair<Vector3D,double>> stack;
+    for(char k : draw){
+        if (k == '('){
+            stack.emplace(currentpoint,currenangle);
+        }
+        else if(k == ')'){
+            currentpoint = stack.top().first;
+            currenangle = stack.top().second;
+            stack.pop();
+        }
+        else if(k == '+'){
+
+        }
+    }
+
 }

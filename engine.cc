@@ -160,7 +160,15 @@ img::EasyImage generate_image(const ini::Configuration &configuration) {
                 applyTransformation(figuur, v);
                 figlist.emplace_back(figuur);
             }
-            //random dink tekenen
+            else if(wireframetype == "3DLSystem"){
+                string inputfile = configuration["Figure"+endf]["inputfile"];
+                LParser::LSystem3D LSystem2D;
+                ifstream file(inputfile);
+                file >> LSystem2D;
+                file.close();
+
+            }
+            //random dink tekene
             else {
                 figuur.color = color;
                 int nrPoints = configuration["Figure" + endf]["nrPoints"];
