@@ -145,7 +145,7 @@ Figure createDodecahedron(){
         }
         d.points.emplace_back(GetMid(p,3));
     }
-
+    d.faces.clear();
     //Faces emplacen
     d.faces.emplace_back(Face({0,1,2,3,4}));
     d.faces.emplace_back(Face({0,5,6,7,1}));
@@ -173,6 +173,8 @@ Figure createSphere(const double radius, const int n){
             point1 = ico.points[f.point_indexes[0]];
             point2 = ico.points[f.point_indexes[1]];
             point3 = ico.points[f.point_indexes[2]];
+
+
             Vector3D D,E,F;
             D = (point1 + point2) / 2;
             E = (point1 + point3) / 2;
@@ -187,6 +189,7 @@ Figure createSphere(const double radius, const int n){
             int didx = sphere.points.size() - 3;
             int eidx = sphere.points.size() - 2;
             int fidx = sphere.points.size() - 1;
+
 
             sphere.faces.emplace_back(Face({aidx,didx,eidx}));
             sphere.faces.emplace_back(Face({bidx,fidx,didx}));
