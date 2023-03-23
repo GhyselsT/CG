@@ -65,14 +65,14 @@ Figure createOctahedron(){
     o.points.emplace_back(Vector3D::point(0,0,1));
 
     //Faces emplace
-    o.faces.emplace_back(Face({1,2,6}));
-    o.faces.emplace_back(Face({2,3,6}));
-    o.faces.emplace_back(Face({3,4,6}));
-    o.faces.emplace_back(Face({4,1,6}));
-    o.faces.emplace_back(Face({2,1,5}));
-    o.faces.emplace_back(Face({3,2,5}));
-    o.faces.emplace_back(Face({4,3,5}));
-    o.faces.emplace_back(Face({1,4,5}));
+    o.faces.emplace_back(Face({0,1,5}));
+    o.faces.emplace_back(Face({1,2,5}));
+    o.faces.emplace_back(Face({2,3,5}));
+    o.faces.emplace_back(Face({3,0,5}));
+    o.faces.emplace_back(Face({1,0,4}));
+    o.faces.emplace_back(Face({2,1,4}));
+    o.faces.emplace_back(Face({3,2,4}));
+    o.faces.emplace_back(Face({0,3,4}));
 
     return o;
 }
@@ -204,10 +204,11 @@ Figure createSphere(double radius, const int n){
         }
         sphere.faces = newfaces;
     }
-    for (auto &p: sphere.points) {
-        radius = sqrt(pow(p.x, 2) + pow(p.y, 2) + pow(p.z, 2));
-        p = Vector3D::point(p.x / radius, p.y / radius, p.z / radius);
-    }
+    //TODO wrm moet dit niet.
+//    for (auto &p: sphere.points) {
+//        radius = sqrt(pow(p.x, 2) + pow(p.y, 2) + pow(p.z, 2));
+//        p = Vector3D::point(p.x / radius, p.y / radius, p.z / radius);
+//    }
     for (auto &p: sphere.points) {
         p = Vector3D::normalise(p);
     }
@@ -237,10 +238,10 @@ Figure createCylinder(const int n, const double h){
         //points
         //bottom
         c.points.emplace_back(Vector3D::point(cos(2*i*M_PI/n), sin(2*i*M_PI/n), 0));
-        std::cout << *c.points.end() << std::endl;
+        //std::cout << *c.points.end() << std::endl;
         //top
         c.points.emplace_back(Vector3D::point(cos(2*i*M_PI/n), sin(2*i*M_PI/n), h));
-        std::cout << *c.points.end() << std::endl;
+        //std::cout << *c.points.end() << std::endl;
 
     }
     for (int i = 0; i < 2*n; i+=2) {
