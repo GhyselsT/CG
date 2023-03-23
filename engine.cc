@@ -166,6 +166,7 @@ img::EasyImage generate_image(const ini::Configuration &configuration) {
                 ifstream file(inputfile);
                 file >> LSystem2D;
                 file.close();
+                continue;
 
             }
             //random dink tekene

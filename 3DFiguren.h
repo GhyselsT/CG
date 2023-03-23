@@ -164,17 +164,15 @@ Figure createDodecahedron(){
     return d;
 }
 
-Figure createSphere(const double radius, const int n){
-    Figure sphere;
-
-    Figure ico = createIcosahedron();
+Figure createSphere(double radius, const int n){
+    Figure sphere = createIcosahedron();
     for (int i = 0; i < n; ++i) {
-
-        for(auto f: ico.faces){
+        vector<Face> newfaces;
+        for (auto f: sphere.faces) {
             Vector3D A, B, C, D, E, F;
-            A = ico.points[f.point_indexes[0]];
-            B = ico.points[f.point_indexes[1]];
-            C = ico.points[f.point_indexes[2]];
+            A = sphere.points[f.point_indexes[0]];
+            B = sphere.points[f.point_indexes[1]];
+            C = sphere.points[f.point_indexes[2]];
             D = Vector3D::point((A.x + B.x) / 2,
                                 (A.y + B.y) / 2,
                                 (A.z + B.z) / 2);
@@ -186,8 +184,6 @@ Figure createSphere(const double radius, const int n){
             F = Vector3D::point((B.x + C.x) / 2,
                                 (B.y + C.y) / 2,
                                 (B.z + C.z) / 2);
-
-
 
             sphere.points.emplace_back(D);
             sphere.points.emplace_back(E);
@@ -201,16 +197,21 @@ Figure createSphere(const double radius, const int n){
             int fidx = sphere.points.size() - 1;
 
             //in vector zetten
-            sphere.faces.emplace_back(Face({aidx,didx,eidx}));
-            sphere.faces.emplace_back(Face({bidx,fidx,didx}));
-            sphere.faces.emplace_back(Face({cidx,eidx,fidx}));
-            sphere.faces.emplace_back(Face({didx,fidx,eidx}));
+            newfaces.emplace_back(Face({aidx, didx, eidx}));
+            newfaces.emplace_back(Face({bidx, fidx, didx}));
+            newfaces.emplace_back(Face({cidx, eidx, fidx}));
+            newfaces.emplace_back(Face({didx, fidx, eidx}));
         }
-
+        sphere.faces = newfaces;
     }
-    for (auto &p : sphere.points){
+    for (auto &p: sphere.points) {
+        radius = sqrt(pow(p.x, 2) + pow(p.y, 2) + pow(p.z, 2));
+        p = Vector3D::point(p.x / radius, p.y / radius, p.z / radius);
+    }
+    for (auto &p: sphere.points) {
         p = Vector3D::normalise(p);
     }
+
     return sphere;
 }
 
@@ -309,6 +310,9 @@ Lines2D draw3Dlsystem(const LParser::LSystem3D &sys,const vector<double>& Color)
     currentpoint.z = 0;
     double currenangle = sys.get_angle() * M_PI;
 
+    Line2D lijn{};
+    Lines2D listLijnen;
+
     stack<pair<Vector3D,double>> stack;
     for(char k : draw){
         if (k == '('){
@@ -320,8 +324,9 @@ Lines2D draw3Dlsystem(const LParser::LSystem3D &sys,const vector<double>& Color)
             stack.pop();
         }
         else if(k == '+'){
-
+            continue;
         }
     }
+    return listLijnen;
 
 }
