@@ -339,6 +339,7 @@ Figure draw3Dlsystem(const LParser::LSystem3D &sys){
         else if(k == ')'){
             currentpoint = points.top(); points.pop();
             lsys.points.emplace_back(currentpoint);
+            ctr+=1;
             H = hoekH.top(); hoekH.pop();
             L = hoekL.top(); hoekL.pop();
             U = hoekU.top(); hoekU.pop();
