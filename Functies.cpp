@@ -201,16 +201,16 @@ Matrix eyePointTrans(const Vector3D &eyepoint) {
     double r;
     toPolar(eyepoint, theta, phi, r);
     Matrix m;
-    m(1,1) = -sin(theta);
-    m(1,2) = -cos(theta) * cos(phi);
+    m(1,1) = -(sin(theta));
+    m(1,2) = -(cos(theta)) * cos(phi);
     m(1,3) = cos(theta) * sin(phi);
 
     m(2,1) = cos(theta);
-    m(2,2) = -sin(theta) * cos(phi);
+    m(2,2) = -(sin(theta)) * cos(phi);
     m(2,3) = sin(theta) * sin(phi);
 
     m(3,2) = sin(phi);
-    m(3,3) = cos(theta);
+    m(3,3) = cos(phi);
 
     m(4,3) = -r;
     m(4,4) = 1;

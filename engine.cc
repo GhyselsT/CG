@@ -162,11 +162,16 @@ img::EasyImage generate_image(const ini::Configuration &configuration) {
             }
             else if(wireframetype == "3DLSystem"){
                 string inputfile = configuration["Figure"+endf]["inputfile"];
-                LParser::LSystem3D LSystem2D;
+                LParser::LSystem3D LSystem3D;
                 ifstream file(inputfile);
-                file >> LSystem2D;
+                file >> LSystem3D;
                 file.close();
-                continue;
+
+                figuur = draw3Dlsystem(LSystem3D);
+                figuur.color = color;
+                auto v = allTrans(scale, xangle, yangle, zangle, VecToVec3d(center));
+                applyTransformation(figuur, v);
+                figlist.emplace_back(figuur);
 
             }
             //random dink tekene

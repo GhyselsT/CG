@@ -14,6 +14,7 @@
 
 using namespace std;
 
+
 Figure createKubus(){
     Figure cube;
     //Points emplacen
@@ -238,10 +239,8 @@ Figure createCylinder(const int n, const double h){
         //points
         //bottom
         c.points.emplace_back(Vector3D::point(cos(2*i*M_PI/n), sin(2*i*M_PI/n), 0));
-        //std::cout << *c.points.end() << std::endl;
         //top
         c.points.emplace_back(Vector3D::point(cos(2*i*M_PI/n), sin(2*i*M_PI/n), h));
-        //std::cout << *c.points.end() << std::endl;
 
     }
     for (int i = 0; i < 2*n; i+=2) {
@@ -270,18 +269,20 @@ Figure createTorus(const double r,const double R,const int n, const int m) {
     return torus;
 }
 
-Lines2D draw3Dlsystem(const LParser::LSystem3D &sys,const vector<double>& Color){
+Figure draw3Dlsystem(const LParser::LSystem3D &sys){
+    Figure lsys;
+
     string initiator = sys.get_initiator();
-    unsigned int iterations = sys.get_nr_iterations();
+    double iterations = sys.get_nr_iterations();
     string draw;
     if (iterations == 0){
         draw = initiator;
     }
     else{
-        for (int i = 1; i <iterations ; ++i) {
+        for (int i = 1; i <=iterations ; ++i) {
             draw="";
             for(char j : initiator){
-                if (j=='+'){
+                if (j =='+'){
                     draw.append("+");
                 }else if(j =='-'){
                     draw.append("-");
@@ -300,34 +301,89 @@ Lines2D draw3Dlsystem(const LParser::LSystem3D &sys,const vector<double>& Color)
                 }else if (j == '^'){
                     draw.append("^");
                 }
+                else{
+                    draw.append(sys.get_replacement(j));
+                }
             }
             initiator = draw;
         }
     }
+    //cout << draw;
 
-    Vector3D currentpoint;
-    currentpoint.x = 0;
-    currentpoint.y = 0;
-    currentpoint.z = 0;
-    double currenangle = sys.get_angle() * M_PI;
+    Vector3D currentpoint = Vector3D::point(0,0,0);
+    Vector3D H = Vector3D::vector(1,0,0);
+    Vector3D L = Vector3D::vector(0,1,0);
+    Vector3D U = Vector3D::vector(0,0,1);
+    Vector3D temp = Vector3D::vector(0,0,0);
 
-    Line2D lijn{};
-    Lines2D listLijnen;
 
-    stack<pair<Vector3D,double>> stack;
+    double angle = GradToRad(sys.get_angle());
+    stack<Vector3D> points;
+    stack<Vector3D> hoekH;
+    stack<Vector3D> hoekL;
+    stack<Vector3D> hoekU;
+
+    lsys.points.emplace_back(currentpoint);
+    int ctr = 1;
+    Face face;
+
     for(char k : draw){
         if (k == '('){
-            stack.emplace(currentpoint,currenangle);
+            points.emplace(currentpoint);
+            hoekH.emplace(H);
+            hoekL.emplace(L);
+            hoekU.emplace(U);
         }
         else if(k == ')'){
-            currentpoint = stack.top().first;
-            currenangle = stack.top().second;
-            stack.pop();
+            currentpoint = points.top(); points.pop();
+            H = hoekH.top(); hoekH.pop();
+            L = hoekL.top(); hoekL.pop();
+            U = hoekU.top(); hoekU.pop();
         }
         else if(k == '+'){
-            continue;
+            temp = H;
+            H = temp*cos(angle) + L*sin(angle);
+            L = -(temp*sin(angle)) + L*cos(angle);
+        }
+        else if(k == '-'){
+            temp = H;
+            H = temp*cos(-angle) + L*sin(-angle);
+            L = -(temp*sin(-angle)) + L*cos(-angle);
+        }
+        else if(k =='^'){
+            temp = H;
+            H = temp*cos(angle) + U*sin(angle);
+            U = -(temp*sin(angle)) + U*cos(angle);
+        }
+        else if(k == '&'){
+            temp = H;
+            H = temp*cos(-angle) + U*sin(-angle);
+            U = -(temp*sin(-angle)) + U*cos(-angle);
+        }
+        else if(k =='\\'){
+            temp = L;
+            L = temp* cos(angle) - U* sin(angle);
+            U = temp* sin(angle) + U* cos(angle);
+        }
+        else if(k == '/'){
+            temp = L;
+            L = temp* cos(-angle) - U* sin(-angle);
+            U = temp* sin(-angle) + U* cos(-angle);
+        }
+        else if(k == '|'){
+            H= -H;
+            L= -L;
+        }
+        else{
+            currentpoint+=H;
+            lsys.points.emplace_back(currentpoint);
+            //cout << lsys.points.back();
+            if (sys.draw(k)){
+                face.point_indexes = {ctr-1,ctr};
+                lsys.faces.emplace_back(face);
+            }
+            ctr +=1;
         }
     }
-    return listLijnen;
-
+    return lsys;
 }
