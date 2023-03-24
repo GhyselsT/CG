@@ -279,7 +279,7 @@ Figure draw3Dlsystem(const LParser::LSystem3D &sys){
         draw = initiator;
     }
     else{
-        for (int i = 1; i <=iterations ; ++i) {
+        for (int i = 0; i <iterations ; ++i) {
             draw="";
             for(char j : initiator){
                 if (j =='+'){
@@ -314,10 +314,12 @@ Figure draw3Dlsystem(const LParser::LSystem3D &sys){
     Vector3D H = Vector3D::vector(1,0,0);
     Vector3D L = Vector3D::vector(0,1,0);
     Vector3D U = Vector3D::vector(0,0,1);
+
     Vector3D temp = Vector3D::vector(0,0,0);
 
 
     double angle = GradToRad(sys.get_angle());
+    //stacks
     stack<Vector3D> points;
     stack<Vector3D> hoekH;
     stack<Vector3D> hoekL;
@@ -336,6 +338,7 @@ Figure draw3Dlsystem(const LParser::LSystem3D &sys){
         }
         else if(k == ')'){
             currentpoint = points.top(); points.pop();
+            lsys.points.emplace_back(currentpoint);
             H = hoekH.top(); hoekH.pop();
             L = hoekL.top(); hoekL.pop();
             U = hoekU.top(); hoekU.pop();
