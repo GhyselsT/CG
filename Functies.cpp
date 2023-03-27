@@ -252,7 +252,7 @@ Lines2D doProjection(const Figures3D &fig) {
 }
 
 Vector3D VecToVec3d(vector<double> center) {
-    Vector3D output;
+    Vector3D output = Vector3D::point(0,0,0);
     output.x = center[0];
     output.y = center[1];
     output.z = center[2];
