@@ -2,7 +2,6 @@
 // Created by thomg on 16/03/2023.
 //
 
-#define _USE_MATH_DEFINES
 #include "Functies.h"
 #include "Figure.h"
 #include "Face.h"
@@ -11,6 +10,8 @@
 #include <stack>
 
 #include "iostream"
+
+#define M_PI 3.14159265358979323846264338327950288419716939937510
 
 using namespace std;
 

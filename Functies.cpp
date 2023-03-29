@@ -22,6 +22,14 @@ double GradToRad(double a){
     return (a/180)*M_PI;
 }
 
+img::Color toImgColor(const Color& kleur){
+    img::Color k;
+    k.red = lround(kleur.red * 255);
+    k.blue = lround(kleur.blue * 255);
+    k.green = lround(kleur.green * 255);
+    return k;
+}
+
 Lines2D drawLSystem(const LParser::LSystem2D &l_system, Color color){
     string initiator = l_system.get_initiator();
     unsigned int iterations = l_system.get_nr_iterations();
@@ -243,6 +251,8 @@ Lines2D doProjection(const Figures3D &fig) {
                 int s = i.point_indexes[(p+1)%i.point_indexes.size()];
                 lijn.p1 = doProjection(item.points[f], 1);
                 lijn.p2 = doProjection((item.points[s]), 1);
+                lijn.z1 = item.points[f].z;
+                lijn.z2 = item.points[s].z;
                 lijn.color = item.color;
                 lijnen.emplace_back(lijn);
             }

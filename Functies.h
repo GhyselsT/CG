@@ -17,6 +17,8 @@ Lines2D drawLSystem(const LParser::LSystem2D &l_system, Color);
 
 double GradToRad(double a);
 
+img::Color toImgColor(const Color& kleur);
+
 
 
 Matrix scaleFigure(const double scale);

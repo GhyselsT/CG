@@ -4,9 +4,8 @@
 
 
 #include "draw2DLines.h"
-#include "cmath"
 
-img::EasyImage draw2DLines::drawlines(Lines2D &lines, const int size, Color color) {
+img::EasyImage draw2DLines::drawlines(Lines2D &lines, const int size, Color color, string type) {
 
     double xmax = lines.back().p1.x;
     double xmin = lines.front().p1.x;
@@ -53,7 +52,12 @@ img::EasyImage draw2DLines::drawlines(Lines2D &lines, const int size, Color colo
 // image van x en image van y berekenen
     double imagex = size * xrange/max(xrange,yrange);
     double imagey = size * yrange/max(xrange,yrange);
+    cout << imagex << " imagex" << "\n";
+    cout << imagey << " imagey" << "\n";
     img::EasyImage ima = img::EasyImage (lround(imagex), lround(imagey),color1);
+    auto zbuf = ZBuffer(lround(imagex), lround(imagey));
+
+
 
 // schaalfactor berekenen
     double d = 0.95 * imagex/xrange;
@@ -90,13 +94,19 @@ img::EasyImage draw2DLines::drawlines(Lines2D &lines, const int size, Color colo
     }
 
 //kleuren van de lijn
-    for(auto &line:lines){
-        img::Color kleur;
-        kleur.red = lround(line.color.red * 255);
-        kleur.blue = lround(line.color.blue * 255);
-        kleur.green = lround(line.color.green * 255);
+    for(auto &line:lines) {
+        img::Color linecolor = toImgColor(line.color);
+
+        //img::Color kleur;
+        //kleur.red = lround(line.color.red * 255);
+        //kleur.blue = lround(line.color.blue * 255);
+        //kleur.green = lround(line.color.green * 255);
         //cout << (int)kleur.red << " " << (int)kleur.blue << " " << (int)kleur.green << endl;
-        ima.draw_line(lround(line.p1.x), lround(line.p1.y), lround(line.p2.x), lround(line.p2.y),kleur);
+        if (type == "ZBufferedWireframe") {
+            zbuf.draw_zbuff_line(zbuf,ima,lround(line.p1.x), lround(line.p1.y),line.z1, lround(line.p2.x), lround(line.p2.y),line.z2,line.color);
+        } else {
+            ima.draw_line(lround(line.p1.x), lround(line.p1.y), lround(line.p2.x), lround(line.p2.y), linecolor);
+        }
     }
     return ima;
 }

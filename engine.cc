@@ -68,10 +68,10 @@ img::EasyImage generate_image(const ini::Configuration &configuration) {
 
         draw2DLines lines;
         auto lsystem = drawLSystem(LSystem2D, color);
-        return lines.drawlines(lsystem, size, backgroundcolor);
+        return lines.drawlines(lsystem, size, backgroundcolor, type);
     }
     //Wireframe
-    if (type == "Wireframe"){
+    if (type == "Wireframe" || type == "ZBufferedWireframe"){
         ///teken het wireframe
         vector<double> eye = configuration["General"]["eye"];
         int nrFigures = configuration["General"]["nrFigures"];
@@ -203,8 +203,9 @@ img::EasyImage generate_image(const ini::Configuration &configuration) {
         applyTransformation(figlist,v);
         auto pp = doProjection(figlist);
 
+
         draw2DLines teken;
-        return teken.drawlines(pp,size, backgroundcolor);
+        return teken.drawlines(pp,size, backgroundcolor,type);
     }
     return img::EasyImage();
 }

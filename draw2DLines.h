@@ -8,12 +8,16 @@
 #include <iostream>
 #include "Line2D.h"
 #include "easy_image.h"
+#include "cmath"
+#include "Functies.h"
+#include "ZBuffer.h"
+
 
 using namespace std;
 
 class draw2DLines {
 public:
-    img::EasyImage drawlines (Lines2D &lines, const int size, Color color);
+    img::EasyImage drawlines (Lines2D &lines, const int size, Color color, string type);
 
 };
 
