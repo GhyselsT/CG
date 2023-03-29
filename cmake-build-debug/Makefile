@@ -197,6 +197,30 @@ Functies.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make CMakeFiles/engine.dir/Functies.cpp.s
 .PHONY : Functies.cpp.s
 
+ZBuffer.obj: ZBuffer.cpp.obj
+.PHONY : ZBuffer.obj
+
+# target to build an object file
+ZBuffer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make CMakeFiles/engine.dir/ZBuffer.cpp.obj
+.PHONY : ZBuffer.cpp.obj
+
+ZBuffer.i: ZBuffer.cpp.i
+.PHONY : ZBuffer.i
+
+# target to preprocess a source file
+ZBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make CMakeFiles/engine.dir/ZBuffer.cpp.i
+.PHONY : ZBuffer.cpp.i
+
+ZBuffer.s: ZBuffer.cpp.s
+.PHONY : ZBuffer.s
+
+# target to generate assembly for a file
+ZBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make CMakeFiles/engine.dir/ZBuffer.cpp.s
+.PHONY : ZBuffer.cpp.s
+
 draw2DLines.obj: draw2DLines.cpp.obj
 .PHONY : draw2DLines.obj
 
@@ -357,6 +381,9 @@ help:
 	@echo ... Functies.obj
 	@echo ... Functies.i
 	@echo ... Functies.s
+	@echo ... ZBuffer.obj
+	@echo ... ZBuffer.i
+	@echo ... ZBuffer.s
 	@echo ... draw2DLines.obj
 	@echo ... draw2DLines.i
 	@echo ... draw2DLines.s

@@ -144,6 +144,12 @@
 		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/Point2D.h">
 			<Option target="engine"/>
 		</Unit>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/ZBuffer.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/ZBuffer.h">
+			<Option target="engine"/>
+		</Unit>
 		<Unit filename="C:/Users/thomg/Documents/SCHOOL/sem2/CG/draw2DLines.cpp">
 			<Option target="engine"/>
 		</Unit>

@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/thomg/Documents/SCHOOL/sem2/CG/Functies.cpp" "CMakeFiles/engine.dir/Functies.cpp.obj" "gcc" "CMakeFiles/engine.dir/Functies.cpp.obj.d"
+  "C:/Users/thomg/Documents/SCHOOL/sem2/CG/ZBuffer.cpp" "CMakeFiles/engine.dir/ZBuffer.cpp.obj" "gcc" "CMakeFiles/engine.dir/ZBuffer.cpp.obj.d"
   "C:/Users/thomg/Documents/SCHOOL/sem2/CG/draw2DLines.cpp" "CMakeFiles/engine.dir/draw2DLines.cpp.obj" "gcc" "CMakeFiles/engine.dir/draw2DLines.cpp.obj.d"
   "C:/Users/thomg/Documents/SCHOOL/sem2/CG/easy_image.cc" "CMakeFiles/engine.dir/easy_image.cc.obj" "gcc" "CMakeFiles/engine.dir/easy_image.cc.obj.d"
   "C:/Users/thomg/Documents/SCHOOL/sem2/CG/engine.cc" "CMakeFiles/engine.dir/engine.cc.obj" "gcc" "CMakeFiles/engine.dir/engine.cc.obj.d"

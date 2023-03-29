@@ -18,7 +18,7 @@ set(engine_sources
 	easy_image.cc
 	engine.cc
 	ini_configuration.cc
-		Color.h Point2D.h Line2D.h draw2DLines.cpp draw2DLines.h l_parser.h l_parser.cc Functies.cpp Functies.h Face.h Figure.h vector3d.cc vector3d.h 3DFiguren.h)
+		Color.h Point2D.h Line2D.h draw2DLines.cpp draw2DLines.h l_parser.h l_parser.cc Functies.cpp Functies.h Face.h Figure.h vector3d.cc vector3d.h 3DFiguren.h ZBuffer.cpp ZBuffer.h)
 
 ############################################################
 # Create an executable

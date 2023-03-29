@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/engine.dir/Functies.cpp.obj"
   "CMakeFiles/engine.dir/Functies.cpp.obj.d"
+  "CMakeFiles/engine.dir/ZBuffer.cpp.obj"
+  "CMakeFiles/engine.dir/ZBuffer.cpp.obj.d"
   "CMakeFiles/engine.dir/draw2DLines.cpp.obj"
   "CMakeFiles/engine.dir/draw2DLines.cpp.obj.d"
   "CMakeFiles/engine.dir/easy_image.cc.obj"

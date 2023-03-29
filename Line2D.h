@@ -17,7 +17,12 @@ public:
     Point2D p1;
     Point2D p2;
     Color color;
+
+    //Z-values of point
+    double z1;
+    double z2;
 };
+
 using Lines2D = list<Line2D>;
 
 
