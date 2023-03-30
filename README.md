@@ -10,7 +10,7 @@ X: Niet werkend of niet geïmplementeerd
 |---|---------------------------|--------|
 | 1 | 2D L-systemen             | V      |
 |   | Met haakjes               | V      |
-|   | Stochastisch              | V      |
+|   | Stochastisch              | X      |
 | 2 | Transformaties            | V      |
 |   | Eye-point                 | V      |
 |   | Projectie                 | V      |
@@ -19,7 +19,7 @@ X: Niet werkend of niet geïmplementeerd
 |   | Bol                       | V      |
 |   | Torus                     | V      |
 |   | 3D L-systemen             | V      |
-| 4 | Z-buffering (lijnen)      |        |
+| 4 | Z-buffering (lijnen)      | V      |
 | 5 | Triangulatie              |        |
 |   | Z-buffering (driehoeken)  |        |
 | 6 | 3D fractalen              |        |

@@ -6,7 +6,7 @@
 
 
 ZBuffer::ZBuffer(const int width, const int height) {
-    cout << width <<" " <<height << endl;
+    //cout << width <<" " <<height << endl;
     for (int i = 0; i < width; ++i) {
         vector<double> rij;
         for (int j = 0; j < height; ++j) {

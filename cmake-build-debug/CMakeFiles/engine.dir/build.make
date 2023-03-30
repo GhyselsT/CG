@@ -72,113 +72,113 @@ CMakeFiles/engine.dir/easy_image.cc.obj: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/easy_image.cc.obj: C:/Users/thomg/Documents/SCHOOL/sem2/CG/easy_image.cc
 CMakeFiles/engine.dir/easy_image.cc.obj: CMakeFiles/engine.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\thomg\Documents\SCHOOL\sem2\CG\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/engine.dir/easy_image.cc.obj"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/easy_image.cc.obj -MF CMakeFiles\engine.dir\easy_image.cc.obj.d -o CMakeFiles\engine.dir\easy_image.cc.obj -c C:\Users\thomg\Documents\SCHOOL\sem2\CG\easy_image.cc
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/easy_image.cc.obj -MF CMakeFiles\engine.dir\easy_image.cc.obj.d -o CMakeFiles\engine.dir\easy_image.cc.obj -c C:\Users\thomg\Documents\SCHOOL\sem2\CG\easy_image.cc
 
 CMakeFiles/engine.dir/easy_image.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/easy_image.cc.i"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thomg\Documents\SCHOOL\sem2\CG\easy_image.cc > CMakeFiles\engine.dir\easy_image.cc.i
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thomg\Documents\SCHOOL\sem2\CG\easy_image.cc > CMakeFiles\engine.dir\easy_image.cc.i
 
 CMakeFiles/engine.dir/easy_image.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/easy_image.cc.s"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thomg\Documents\SCHOOL\sem2\CG\easy_image.cc -o CMakeFiles\engine.dir\easy_image.cc.s
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thomg\Documents\SCHOOL\sem2\CG\easy_image.cc -o CMakeFiles\engine.dir\easy_image.cc.s
 
 CMakeFiles/engine.dir/engine.cc.obj: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/engine.cc.obj: C:/Users/thomg/Documents/SCHOOL/sem2/CG/engine.cc
 CMakeFiles/engine.dir/engine.cc.obj: CMakeFiles/engine.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\thomg\Documents\SCHOOL\sem2\CG\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/engine.dir/engine.cc.obj"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine.cc.obj -MF CMakeFiles\engine.dir\engine.cc.obj.d -o CMakeFiles\engine.dir\engine.cc.obj -c C:\Users\thomg\Documents\SCHOOL\sem2\CG\engine.cc
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine.cc.obj -MF CMakeFiles\engine.dir\engine.cc.obj.d -o CMakeFiles\engine.dir\engine.cc.obj -c C:\Users\thomg\Documents\SCHOOL\sem2\CG\engine.cc
 
 CMakeFiles/engine.dir/engine.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine.cc.i"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thomg\Documents\SCHOOL\sem2\CG\engine.cc > CMakeFiles\engine.dir\engine.cc.i
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thomg\Documents\SCHOOL\sem2\CG\engine.cc > CMakeFiles\engine.dir\engine.cc.i
 
 CMakeFiles/engine.dir/engine.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine.cc.s"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thomg\Documents\SCHOOL\sem2\CG\engine.cc -o CMakeFiles\engine.dir\engine.cc.s
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thomg\Documents\SCHOOL\sem2\CG\engine.cc -o CMakeFiles\engine.dir\engine.cc.s
 
 CMakeFiles/engine.dir/ini_configuration.cc.obj: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/ini_configuration.cc.obj: C:/Users/thomg/Documents/SCHOOL/sem2/CG/ini_configuration.cc
 CMakeFiles/engine.dir/ini_configuration.cc.obj: CMakeFiles/engine.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\thomg\Documents\SCHOOL\sem2\CG\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/engine.dir/ini_configuration.cc.obj"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/ini_configuration.cc.obj -MF CMakeFiles\engine.dir\ini_configuration.cc.obj.d -o CMakeFiles\engine.dir\ini_configuration.cc.obj -c C:\Users\thomg\Documents\SCHOOL\sem2\CG\ini_configuration.cc
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/ini_configuration.cc.obj -MF CMakeFiles\engine.dir\ini_configuration.cc.obj.d -o CMakeFiles\engine.dir\ini_configuration.cc.obj -c C:\Users\thomg\Documents\SCHOOL\sem2\CG\ini_configuration.cc
 
 CMakeFiles/engine.dir/ini_configuration.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/ini_configuration.cc.i"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thomg\Documents\SCHOOL\sem2\CG\ini_configuration.cc > CMakeFiles\engine.dir\ini_configuration.cc.i
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thomg\Documents\SCHOOL\sem2\CG\ini_configuration.cc > CMakeFiles\engine.dir\ini_configuration.cc.i
 
 CMakeFiles/engine.dir/ini_configuration.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/ini_configuration.cc.s"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thomg\Documents\SCHOOL\sem2\CG\ini_configuration.cc -o CMakeFiles\engine.dir\ini_configuration.cc.s
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thomg\Documents\SCHOOL\sem2\CG\ini_configuration.cc -o CMakeFiles\engine.dir\ini_configuration.cc.s
 
 CMakeFiles/engine.dir/draw2DLines.cpp.obj: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/draw2DLines.cpp.obj: C:/Users/thomg/Documents/SCHOOL/sem2/CG/draw2DLines.cpp
 CMakeFiles/engine.dir/draw2DLines.cpp.obj: CMakeFiles/engine.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\thomg\Documents\SCHOOL\sem2\CG\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/engine.dir/draw2DLines.cpp.obj"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/draw2DLines.cpp.obj -MF CMakeFiles\engine.dir\draw2DLines.cpp.obj.d -o CMakeFiles\engine.dir\draw2DLines.cpp.obj -c C:\Users\thomg\Documents\SCHOOL\sem2\CG\draw2DLines.cpp
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/draw2DLines.cpp.obj -MF CMakeFiles\engine.dir\draw2DLines.cpp.obj.d -o CMakeFiles\engine.dir\draw2DLines.cpp.obj -c C:\Users\thomg\Documents\SCHOOL\sem2\CG\draw2DLines.cpp
 
 CMakeFiles/engine.dir/draw2DLines.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/draw2DLines.cpp.i"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thomg\Documents\SCHOOL\sem2\CG\draw2DLines.cpp > CMakeFiles\engine.dir\draw2DLines.cpp.i
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thomg\Documents\SCHOOL\sem2\CG\draw2DLines.cpp > CMakeFiles\engine.dir\draw2DLines.cpp.i
 
 CMakeFiles/engine.dir/draw2DLines.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/draw2DLines.cpp.s"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thomg\Documents\SCHOOL\sem2\CG\draw2DLines.cpp -o CMakeFiles\engine.dir\draw2DLines.cpp.s
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thomg\Documents\SCHOOL\sem2\CG\draw2DLines.cpp -o CMakeFiles\engine.dir\draw2DLines.cpp.s
 
 CMakeFiles/engine.dir/l_parser.cc.obj: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/l_parser.cc.obj: C:/Users/thomg/Documents/SCHOOL/sem2/CG/l_parser.cc
 CMakeFiles/engine.dir/l_parser.cc.obj: CMakeFiles/engine.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\thomg\Documents\SCHOOL\sem2\CG\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/engine.dir/l_parser.cc.obj"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/l_parser.cc.obj -MF CMakeFiles\engine.dir\l_parser.cc.obj.d -o CMakeFiles\engine.dir\l_parser.cc.obj -c C:\Users\thomg\Documents\SCHOOL\sem2\CG\l_parser.cc
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/l_parser.cc.obj -MF CMakeFiles\engine.dir\l_parser.cc.obj.d -o CMakeFiles\engine.dir\l_parser.cc.obj -c C:\Users\thomg\Documents\SCHOOL\sem2\CG\l_parser.cc
 
 CMakeFiles/engine.dir/l_parser.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/l_parser.cc.i"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thomg\Documents\SCHOOL\sem2\CG\l_parser.cc > CMakeFiles\engine.dir\l_parser.cc.i
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thomg\Documents\SCHOOL\sem2\CG\l_parser.cc > CMakeFiles\engine.dir\l_parser.cc.i
 
 CMakeFiles/engine.dir/l_parser.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/l_parser.cc.s"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thomg\Documents\SCHOOL\sem2\CG\l_parser.cc -o CMakeFiles\engine.dir\l_parser.cc.s
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thomg\Documents\SCHOOL\sem2\CG\l_parser.cc -o CMakeFiles\engine.dir\l_parser.cc.s
 
 CMakeFiles/engine.dir/Functies.cpp.obj: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/Functies.cpp.obj: C:/Users/thomg/Documents/SCHOOL/sem2/CG/Functies.cpp
 CMakeFiles/engine.dir/Functies.cpp.obj: CMakeFiles/engine.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\thomg\Documents\SCHOOL\sem2\CG\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/engine.dir/Functies.cpp.obj"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/Functies.cpp.obj -MF CMakeFiles\engine.dir\Functies.cpp.obj.d -o CMakeFiles\engine.dir\Functies.cpp.obj -c C:\Users\thomg\Documents\SCHOOL\sem2\CG\Functies.cpp
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/Functies.cpp.obj -MF CMakeFiles\engine.dir\Functies.cpp.obj.d -o CMakeFiles\engine.dir\Functies.cpp.obj -c C:\Users\thomg\Documents\SCHOOL\sem2\CG\Functies.cpp
 
 CMakeFiles/engine.dir/Functies.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/Functies.cpp.i"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thomg\Documents\SCHOOL\sem2\CG\Functies.cpp > CMakeFiles\engine.dir\Functies.cpp.i
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thomg\Documents\SCHOOL\sem2\CG\Functies.cpp > CMakeFiles\engine.dir\Functies.cpp.i
 
 CMakeFiles/engine.dir/Functies.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/Functies.cpp.s"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thomg\Documents\SCHOOL\sem2\CG\Functies.cpp -o CMakeFiles\engine.dir\Functies.cpp.s
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thomg\Documents\SCHOOL\sem2\CG\Functies.cpp -o CMakeFiles\engine.dir\Functies.cpp.s
 
 CMakeFiles/engine.dir/vector3d.cc.obj: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/vector3d.cc.obj: C:/Users/thomg/Documents/SCHOOL/sem2/CG/vector3d.cc
 CMakeFiles/engine.dir/vector3d.cc.obj: CMakeFiles/engine.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\thomg\Documents\SCHOOL\sem2\CG\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/engine.dir/vector3d.cc.obj"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/vector3d.cc.obj -MF CMakeFiles\engine.dir\vector3d.cc.obj.d -o CMakeFiles\engine.dir\vector3d.cc.obj -c C:\Users\thomg\Documents\SCHOOL\sem2\CG\vector3d.cc
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/vector3d.cc.obj -MF CMakeFiles\engine.dir\vector3d.cc.obj.d -o CMakeFiles\engine.dir\vector3d.cc.obj -c C:\Users\thomg\Documents\SCHOOL\sem2\CG\vector3d.cc
 
 CMakeFiles/engine.dir/vector3d.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/vector3d.cc.i"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thomg\Documents\SCHOOL\sem2\CG\vector3d.cc > CMakeFiles\engine.dir\vector3d.cc.i
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thomg\Documents\SCHOOL\sem2\CG\vector3d.cc > CMakeFiles\engine.dir\vector3d.cc.i
 
 CMakeFiles/engine.dir/vector3d.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/vector3d.cc.s"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thomg\Documents\SCHOOL\sem2\CG\vector3d.cc -o CMakeFiles\engine.dir\vector3d.cc.s
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thomg\Documents\SCHOOL\sem2\CG\vector3d.cc -o CMakeFiles\engine.dir\vector3d.cc.s
 
 CMakeFiles/engine.dir/ZBuffer.cpp.obj: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/ZBuffer.cpp.obj: C:/Users/thomg/Documents/SCHOOL/sem2/CG/ZBuffer.cpp
 CMakeFiles/engine.dir/ZBuffer.cpp.obj: CMakeFiles/engine.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\thomg\Documents\SCHOOL\sem2\CG\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/engine.dir/ZBuffer.cpp.obj"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/ZBuffer.cpp.obj -MF CMakeFiles\engine.dir\ZBuffer.cpp.obj.d -o CMakeFiles\engine.dir\ZBuffer.cpp.obj -c C:\Users\thomg\Documents\SCHOOL\sem2\CG\ZBuffer.cpp
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/ZBuffer.cpp.obj -MF CMakeFiles\engine.dir\ZBuffer.cpp.obj.d -o CMakeFiles\engine.dir\ZBuffer.cpp.obj -c C:\Users\thomg\Documents\SCHOOL\sem2\CG\ZBuffer.cpp
 
 CMakeFiles/engine.dir/ZBuffer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/ZBuffer.cpp.i"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thomg\Documents\SCHOOL\sem2\CG\ZBuffer.cpp > CMakeFiles\engine.dir\ZBuffer.cpp.i
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thomg\Documents\SCHOOL\sem2\CG\ZBuffer.cpp > CMakeFiles\engine.dir\ZBuffer.cpp.i
 
 CMakeFiles/engine.dir/ZBuffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/ZBuffer.cpp.s"
-	C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thomg\Documents\SCHOOL\sem2\CG\ZBuffer.cpp -o CMakeFiles\engine.dir\ZBuffer.cpp.s
+	C:\Qt\Tools\mingw810_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thomg\Documents\SCHOOL\sem2\CG\ZBuffer.cpp -o CMakeFiles\engine.dir\ZBuffer.cpp.s
 
 # Object files for target engine
 engine_OBJECTS = \

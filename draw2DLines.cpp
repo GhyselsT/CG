@@ -52,8 +52,8 @@ img::EasyImage draw2DLines::drawlines(Lines2D &lines, const int size, Color colo
 // image van x en image van y berekenen
     double imagex = size * xrange/max(xrange,yrange);
     double imagey = size * yrange/max(xrange,yrange);
-    cout << imagex << " imagex" << "\n";
-    cout << imagey << " imagey" << "\n";
+    //cout << imagex << " imagex" << "\n";
+    //cout << imagey << " imagey" << "\n";
     img::EasyImage ima = img::EasyImage (lround(imagex), lround(imagey),color1);
     auto zbuf = ZBuffer(lround(imagex), lround(imagey));
 
