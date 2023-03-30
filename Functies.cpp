@@ -269,6 +269,23 @@ Vector3D VecToVec3d(vector<double> center) {
     return output;
 }
 
+vector<Face> triangulate(const Face &face) {
+    vector<Face> output;
+    if (face.point_indexes.size() < 3){
+        output.emplace_back(face.point_indexes);
+        return output;
+    }
+    else{
+        for (int i = 1; i <= face.point_indexes.size(); ++i) {
+            //punt 0,punt zelf, volgend punt
+            output.emplace_back(Face({face.point_indexes[0],face.point_indexes[i],face.point_indexes[i+1]}));
+
+        }
+        return output;
+    }
+}
+
+
 
 
 
