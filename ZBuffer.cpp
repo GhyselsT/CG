@@ -7,9 +7,9 @@
 
 ZBuffer::ZBuffer(const int width, const int height) {
     cout << width <<" " <<height << endl;
-    for (int i = 0; i < height; ++i) {
+    for (int i = 0; i < width; ++i) {
         vector<double> rij;
-        for (int j = 0; j < width; ++j) {
+        for (int j = 0; j < height; ++j) {
             rij.push_back(numeric_limits<double>::infinity());
         }
         this->push_back(rij);
@@ -23,18 +23,39 @@ void ZBuffer::draw_zbuff_line(ZBuffer &zbuf, img::EasyImage &image, unsigned int
     assert(x1 < image.get_width() && y1 < image.get_height());
     if (x0 == x1)
     {
+        auto zmin = (std::min(y0, y1) == y0) ? z0:z1;
+        auto zmax = (std::max(y0, y1) == y0) ? z0:z1;
         //special case for x0 == x1
         for (unsigned int i = std::min(y0, y1); i <= std::max(y0, y1); i++)
         {
-            (image)(x0, i) = toImgColor(color);
+            double z;
+            if(y0 == y1){
+                z = std::min(y0, y1) * (zmax - zmin);
+            } else{
+                z = zmin + (zmax - zmin)*(i - std::min(y0, y1))/(std::max(y0, y1) - std::min(y0, y1));
+            }
+            double eoz = 1/z;
+            if (eoz < zbuf[x0][i]){
+                (image)(x0, i) = toImgColor(color);
+                zbuf[x0][i] = eoz;
+            }
+
         }
     }
     else if (y0 == y1)
     {
+        auto zmin = (std::min(x0, x1) == x0) ? z0:z1;
+        auto zmax = (std::max(x0, x1) == x0) ? z0:z1;
         //special case for y0 == y1
         for (unsigned int i = std::min(x0, x1); i <= std::max(x0, x1); i++)
         {
-            (image)(i, y0) = toImgColor(color);
+            auto z = zmin + (zmax - zmin) * (i - std::min(x0, x1))/(std::max(x0, x1) - std::min(x0, x1));
+            double eoz = 1/z;
+
+            if (eoz < zbuf[i][y0]){
+                (image)(i,y0) = toImgColor(color);
+                zbuf[i][y0] = eoz;
+            }
         }
     }
     else
