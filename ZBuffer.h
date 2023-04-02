@@ -29,7 +29,12 @@ public:
                          unsigned int x1,unsigned int y1,
                          double z1,
                          const Color& color);
-    
+
+
+    void draw_zbuf_triag(ZBuffer& zbuf, img::EasyImage& image,
+                         Vector3D const& A, Vector3D const& B, Vector3D const& C,
+                         double d, double dx, double dy,
+                         const Color& color);
 };
 
 

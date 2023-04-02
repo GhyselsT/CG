@@ -113,5 +113,14 @@ void ZBuffer::draw_zbuff_line(ZBuffer &zbuf, img::EasyImage &image, unsigned int
     }
 
 }
+///dees werkende krijgen
+void ZBuffer::draw_zbuf_triag(ZBuffer &zbuf, img::EasyImage &image,
+                              const Vector3D &A, const Vector3D &B, const Vector3D &C,
+                              double d, double dx, double dy,
+                              const Color& color) {
+
+
+
+}
 
 
