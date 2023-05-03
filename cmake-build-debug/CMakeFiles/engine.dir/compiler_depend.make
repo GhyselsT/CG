@@ -149,6 +149,7 @@ CMakeFiles/engine.dir/Functies.cpp.obj: C:/Users/thomg/Documents/SCHOOL/sem2/CG/
   C:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/math.h \
   C:/Users/thomg/Documents/SCHOOL/sem2/CG/ZBuffer.h \
   C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/limits \
+  C:/Users/thomg/Documents/SCHOOL/sem2/CG/vector3d.h \
   C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/algorithm \
   C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/utility \
   C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_relops.h \
@@ -159,7 +160,6 @@ CMakeFiles/engine.dir/Functies.cpp.obj: C:/Users/thomg/Documents/SCHOOL/sem2/CG/
   C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/uniform_int_dist.h \
   C:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/assert.h \
   C:/Users/thomg/Documents/SCHOOL/sem2/CG/Figure.h \
-  C:/Users/thomg/Documents/SCHOOL/sem2/CG/vector3d.h \
   C:/Users/thomg/Documents/SCHOOL/sem2/CG/Face.h \
   C:/Users/thomg/Documents/SCHOOL/sem2/CG/l_parser.h \
   C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/map \
@@ -316,6 +316,7 @@ CMakeFiles/engine.dir/ZBuffer.cpp.obj: C:/Users/thomg/Documents/SCHOOL/sem2/CG/Z
   C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/istream \
   C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/istream.tcc \
   C:/Users/thomg/Documents/SCHOOL/sem2/CG/Color.h \
+  C:/Users/thomg/Documents/SCHOOL/sem2/CG/vector3d.h \
   C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/algorithm \
   C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/utility \
   C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_relops.h \
@@ -337,7 +338,6 @@ CMakeFiles/engine.dir/ZBuffer.cpp.obj: C:/Users/thomg/Documents/SCHOOL/sem2/CG/Z
   C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/aligned_buffer.h \
   C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/list.tcc \
   C:/Users/thomg/Documents/SCHOOL/sem2/CG/Figure.h \
-  C:/Users/thomg/Documents/SCHOOL/sem2/CG/vector3d.h \
   C:/Users/thomg/Documents/SCHOOL/sem2/CG/Face.h \
   C:/Users/thomg/Documents/SCHOOL/sem2/CG/l_parser.h \
   C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/map \
@@ -1702,6 +1702,8 @@ C:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/math.h:
 
 C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/limits:
 
+C:/Users/thomg/Documents/SCHOOL/sem2/CG/vector3d.h:
+
 C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/sstream.tcc:
 
 C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/utility:
@@ -1725,8 +1727,6 @@ C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/set:
 C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/uniform_int_dist.h:
 
 C:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/assert.h:
-
-C:/Users/thomg/Documents/SCHOOL/sem2/CG/vector3d.h:
 
 C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/map:
 

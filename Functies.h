@@ -52,4 +52,5 @@ Vector3D VecToVec3d(vector<double> center);
 vector<Face> triangulate(const Face& face);
 
 
+
 #endif //ENGINE_FUNCTIES_H

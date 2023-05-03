@@ -147,6 +147,7 @@ CMakeFiles/engine.dir/Functies.cpp.obj: \
  C:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/math.h \
  C:\Users\thomg\Documents\SCHOOL\sem2\CG\ZBuffer.h \
  C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/limits \
+ C:\Users\thomg\Documents\SCHOOL\sem2\CG\vector3d.h \
  C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/algorithm \
  C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/utility \
  C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_relops.h \
@@ -157,7 +158,6 @@ CMakeFiles/engine.dir/Functies.cpp.obj: \
  C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/uniform_int_dist.h \
  C:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/assert.h \
  C:\Users\thomg\Documents\SCHOOL\sem2\CG\Figure.h \
- C:\Users\thomg\Documents\SCHOOL\sem2\CG\vector3d.h \
  C:\Users\thomg\Documents\SCHOOL\sem2\CG\Face.h \
  C:\Users\thomg\Documents\SCHOOL\sem2\CG\l_parser.h \
  C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/map \

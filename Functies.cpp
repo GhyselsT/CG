@@ -234,15 +234,15 @@ void applyTransformation(Figures3D &figs, const Matrix &m) {
 
 Point2D doProjection(const Vector3D &point, const double d) {
     Point2D punt{};
-    punt.x = (d*point.x)/-point.z;
-    punt.y = (d*point.y)/-point.z;
+    punt.x = (d * point.x)/-point.z;
+    punt.y = (d * point.y)/-point.z;
     return punt;
 }
 
 
 Lines2D doProjection(const Figures3D &fig) {
     Lines2D lijnen;
-
+    int ctr = 0;
     for (auto item:fig) {
         for (auto i:item.faces) {
             for (int p = 0; p < i.point_indexes.size(); ++p) {
@@ -255,6 +255,9 @@ Lines2D doProjection(const Figures3D &fig) {
                 lijn.z2 = item.points[s].z;
                 lijn.color = item.color;
                 lijnen.emplace_back(lijn);
+                ctr +=1;
+                //cout << ctr <<endl;
+                //cout << lijn.p1.x <<"  x val   " << lijn.p1.y << "  y val " << endl;
             }
         }
     }
@@ -271,19 +274,21 @@ Vector3D VecToVec3d(vector<double> center) {
 
 vector<Face> triangulate(const Face &face) {
     vector<Face> output;
-    if (face.point_indexes.size() < 3){
-        output.emplace_back(face.point_indexes);
-        return output;
+    //cout << face.point_indexes.size() << endl;
+    if (face.point_indexes.size() <= 3){
+        output.emplace_back(Face({face.point_indexes[0],face.point_indexes[1],face.point_indexes[2]}));
     }
     else{
-        for (int i = 1; i <= face.point_indexes.size(); ++i) {
+        for (int i = 1; i <= face.point_indexes.size()-2; ++i) {
             //punt 0,punt zelf, volgend punt
             output.emplace_back(Face({face.point_indexes[0],face.point_indexes[i],face.point_indexes[i+1]}));
 
         }
-        return output;
     }
+    return output;
 }
+
+
 
 
 

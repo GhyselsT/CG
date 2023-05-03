@@ -113,14 +113,84 @@ void ZBuffer::draw_zbuff_line(ZBuffer &zbuf, img::EasyImage &image, unsigned int
     }
 
 }
-///dees werkende krijgen
+
+//dees werkende krijgen
 void ZBuffer::draw_zbuf_triag(ZBuffer &zbuf, img::EasyImage &image,
                               const Vector3D &A, const Vector3D &B, const Vector3D &C,
                               double d, double dx, double dy,
                               const Color& color) {
 
+    auto Aproj = doProjection(A,d);
+    Aproj.x += dx;
+    Aproj.y += dy;
 
+    auto Bproj = doProjection(B,d);
+    Bproj.x += dx;
+    Bproj.y += dy;
 
+    auto Cproj = doProjection(C,d);
+    Cproj.x += dx;
+    Cproj.y += dy;
+
+    Vector3D u = B-A;
+    Vector3D v = C-A;
+
+    auto w1 = (u.y*v.z) - (u.z*v.y);
+    auto w2 = (u.z*v.x) - (u.x*v.z);
+    auto w3 = (u.x*v.y) - (u.y*v.x);
+    auto w = Vector3D::point(w1,w2,w3);
+
+    auto k = (w1*A.x) + (w2*A.y) + (w3*A.z);
+
+    auto dzdx = (w1/(-d*k));
+    auto dzdy = (w2/(-d*k));
+
+    double Gx = (Aproj.x + Bproj.x + Cproj.x)/3;
+    double Gy = (Aproj.y + Bproj.y + Cproj.y)/3;
+    //double Gz = (3*A.z + 3*B.z + 3*C.z);
+    double eoGz = 1/(3* A.z) + 1 / (3 * B.z) + 1 / (3 * C.z);
+
+    auto minimum = (int)lround(min({Aproj.y,Bproj.y,Cproj.y})+0.5);
+    auto maximum = (int) lround(max({Aproj.y,Bproj.y,Cproj.y})-0.5);
+    for (int yi = minimum; yi <= maximum; ++yi) {
+        double xLab, xLac,xLbc;
+        xLab = numeric_limits<double>::infinity();
+        xLac = numeric_limits<double>::infinity();
+        xLbc = numeric_limits<double>::infinity();
+        double xRab,xRac,xRbc;
+        xRab = - numeric_limits<double>::infinity();
+        xRac = - numeric_limits<double>::infinity();
+        xRbc = - numeric_limits<double>::infinity();
+        //AB
+        if ((yi-Aproj.y)*(yi -Bproj.y) <= 0 && Aproj.y != Bproj.y){
+            double xi = Bproj.x + (Aproj.x - Bproj.x)*((yi-Bproj.y)/(Aproj.y - Bproj.y));
+            xLab = xi;
+            xRab = xi;
+        }
+        if ((yi-Aproj.y)*(yi -Cproj.y) <= 0 && Aproj.y != Cproj.y) {
+            double xi = Cproj.x + (Aproj.x - Cproj.x) * ((yi - Cproj.y) / (Aproj.y - Cproj.y));
+            xLac = xi;
+            xRac = xi;
+        }
+        if ((yi-Bproj.y)*(yi -Cproj.y) <= 0 && Bproj.y != Cproj.y) {
+            double xi = Cproj.x + (Bproj.x - Cproj.x) * ((yi - Cproj.y) / (Bproj.y - Cproj.y));
+            xLbc = xi;
+            xRbc = xi;
+        }
+
+        int xL = (int) lround(min({xLab, xLac, xLbc}) + 0.5);
+        int xR = (int) lround(max({xRab, xRac, xRbc}) - 0.5);
+
+        for (int x = xL; x <= xR; ++x) {
+            double eoz = ((1.0001)*(eoGz)) + (x - Gx)*dzdx + (yi - Gy)*dzdy;
+            if (eoz < zbuf[x][yi]){
+                //std::cout << "test" << std::endl;
+                image(x,yi) = toImgColor(color);
+                zbuf[x][yi] = eoz;
+            }
+        }
+
+    }
 }
 
 

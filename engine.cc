@@ -71,7 +71,7 @@ img::EasyImage generate_image(const ini::Configuration &configuration) {
         return lines.drawlines(lsystem, size, backgroundcolor, type);
     }
     //Wireframe
-    if (type == "Wireframe" || type == "ZBufferedWireframe"){
+    if (type == "Wireframe" || type == "ZBufferedWireframe" || type == "ZBuffering"){
         ///teken het wireframe
         vector<double> eye = configuration["General"]["eye"];
         int nrFigures = configuration["General"]["nrFigures"];
@@ -199,13 +199,67 @@ img::EasyImage generate_image(const ini::Configuration &configuration) {
 
         }
 
-        auto v = eyePointTrans(VecToVec3d(eye));
-        applyTransformation(figlist,v);
-        auto pp = doProjection(figlist);
-
 
         draw2DLines teken;
-        return teken.drawlines(pp,size, backgroundcolor,type);
+
+        if (type == "ZBufferedWireframe") {
+            auto v = eyePointTrans(VecToVec3d(eye));
+            applyTransformation(figlist,v);auto pp = doProjection(figlist);
+            return teken.drawlines(pp, size, backgroundcolor, type);
+        }
+        if (type == "ZBuffering"){
+            auto v = eyePointTrans(VecToVec3d(eye));
+            applyTransformation(figlist,v);
+            for (auto& figuur:figlist) {
+                // lijst van faces
+                vector<Face> facelist;
+                for(auto& f:figuur.faces){
+                    auto newf = triangulate(f);
+                    for(auto newff: newf){
+                        facelist.push_back(newff);
+                    }
+                   // facelist.insert(facelist.begin(), newf.begin(), newf.end());
+
+                }
+                // stel figuur.faces gelijk aan lijst
+                figuur.faces = facelist;
+            }
+
+            //cout <<"figlist size" << figlist.size() << endl;
+            auto lines = doProjection(figlist);
+            auto xvals = teken.getxmaxmin(lines);
+            auto yvals = teken.getymaxmin(lines);
+
+            auto ranges = teken.getRange(xvals.first,xvals.second,yvals.first,yvals.second);
+            auto images = teken.getimageXimageY(size,ranges.first, ranges.second);
+
+            auto d = teken.get_d(images.first,ranges.first);
+            auto DCs = teken.getDCxDCy(d,xvals.second,xvals.first,yvals.second,yvals.first);
+            auto dxdy = teken.getdxdy(images.first,images.second,DCs.first,DCs.second);
+
+//            cout << images.first << endl;
+//            cout << images.second << endl;
+            img::EasyImage image(images.first,images.second);
+            ZBuffer zbuf = ZBuffer(lround(images.first), lround(images.second));
+            for (auto& fig:figlist) {
+                for (auto& face:fig.faces) {
+                    auto A = Vector3D::vector( fig.points[face.point_indexes[0]]);
+                    auto B = Vector3D::vector( fig.points[face.point_indexes[1]]);
+                    auto C = Vector3D::vector( fig.points[face.point_indexes[2]]);
+                    zbuf.draw_zbuf_triag(zbuf,image,A,B,C,d,dxdy.first,dxdy.second,fig.color);
+                }
+            }
+
+            return image;
+
+        }
+        else{
+            auto v = eyePointTrans(VecToVec3d(eye));
+            applyTransformation(figlist,v);
+            auto pp = doProjection(figlist);
+
+            return teken.drawlines(pp, size, backgroundcolor, type);
+        }
     }
     return img::EasyImage();
 }
