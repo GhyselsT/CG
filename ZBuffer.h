@@ -10,6 +10,7 @@
 #include "easy_image.h"
 #include "Color.h"
 #include <iostream>
+#include "vector3d.h"
 
 #include "algorithm"
 #include <assert.h>
