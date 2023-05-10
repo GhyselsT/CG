@@ -1,3 +1,1 @@
-"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\engine.dir/objects.a
-C:\Qt\Tools\mingw810_64\bin\ar.exe qc CMakeFiles\engine.dir/objects.a @CMakeFiles\engine.dir\objects1.rsp
-C:\Qt\Tools\mingw810_64\bin\c++.exe  -std=c++14 -g -std=c++14 -Wl,--whole-archive CMakeFiles\engine.dir/objects.a -Wl,--no-whole-archive -o engine.exe -Wl,--out-implib,libengine.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\engine.dir\linklibs.rsp
+/usr/bin/c++  -std=c++14 -g -std=c++14 CMakeFiles/engine.dir/easy_image.cc.o CMakeFiles/engine.dir/engine.cc.o CMakeFiles/engine.dir/ini_configuration.cc.o CMakeFiles/engine.dir/draw2DLines.cpp.o CMakeFiles/engine.dir/l_parser.cc.o CMakeFiles/engine.dir/Functies.cpp.o CMakeFiles/engine.dir/vector3d.cc.o CMakeFiles/engine.dir/ZBuffer.cpp.o -o engine 

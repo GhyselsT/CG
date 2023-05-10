@@ -174,6 +174,74 @@ img::EasyImage generate_image(const ini::Configuration &configuration) {
                 figlist.emplace_back(figuur);
 
             }
+            else if(wireframetype == "FractalCube"){
+                Figures3D fractals;
+                figuur = createKubus();
+                figuur.color = color;
+
+                const int nrIterations = configuration["Figure"+endf]["nrIterations"];
+                double fractalScale = configuration["Figure"+endf]["fractalScale"];
+                generateFractal(figuur,fractals,nrIterations,fractalScale);
+
+                for (auto& fig:fractals) {
+                    auto m = allTrans(scale, xangle, yangle, zangle, VecToVec3d(center));
+                    applyTransformation(fig, m);
+                    figlist.emplace_back(fig);
+                }
+            }
+            else if (wireframetype == "FractalTetrahedron"){
+                Figures3D fractals;
+                figuur = createTetrahedron();
+                figuur.color = color;
+                const int nrIterations = configuration["Figure"+endf]["nrIterations"];
+                double fractalScale = configuration["Figure"+endf]["fractalScale"];
+                generateFractal(figuur,fractals,nrIterations,fractalScale);
+                for (auto& fig:fractals) {
+                    auto m = allTrans(scale, xangle, yangle, zangle, VecToVec3d(center));
+                    applyTransformation(fig, m);
+                    figlist.emplace_back(fig);
+                }
+            }
+            else if(wireframetype == "FractalOctahedron"){
+                Figures3D fractals;
+                figuur = createOctahedron();
+                figuur.color = color;
+                const int nrIterations = configuration["Figure"+endf]["nrIterations"];
+                double fractalScale = configuration["Figure"+endf]["fractalScale"];
+                generateFractal(figuur,fractals,nrIterations,fractalScale);
+                for (auto& fig:fractals) {
+                    auto m = allTrans(scale, xangle, yangle, zangle, VecToVec3d(center));
+                    applyTransformation(fig, m);
+                    figlist.emplace_back(fig);
+                }
+            }
+            else if (wireframetype =="FractalIcosahedron"){
+                Figures3D fractals;
+                figuur = createIcosahedron();
+                figuur.color = color;
+                const int nrIterations = configuration["Figure"+endf]["nrIterations"];
+                double fractalScale = configuration["Figure"+endf]["fractalScale"];
+                generateFractal(figuur,fractals,nrIterations,fractalScale);
+                for (auto& fig:fractals) {
+                    auto m = allTrans(scale, xangle, yangle, zangle, VecToVec3d(center));
+                    applyTransformation(fig, m);
+                    figlist.emplace_back(fig);
+                }
+            }
+            else if (wireframetype == "FractalDodecahedron"){
+                Figures3D fractals;
+                figuur = createDodecahedron();
+                figuur.color = color;
+                const int nrIterations = configuration["Figure"+endf]["nrIterations"];
+                double fractalScale = configuration["Figure"+endf]["fractalScale"];
+                generateFractal(figuur,fractals,nrIterations,fractalScale);
+                for (auto& fig:fractals) {
+                    auto m = allTrans(scale, xangle, yangle, zangle, VecToVec3d(center));
+                    applyTransformation(fig, m);
+                    figlist.emplace_back(fig);
+                }
+            }
+
             //random dink tekene
             else {
                 figuur.color = color;

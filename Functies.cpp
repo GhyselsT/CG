@@ -288,6 +288,29 @@ vector<Face> triangulate(const Face &face) {
     return output;
 }
 
+void generateFractal(const Figure &fig, Figures3D &fractal, const int nr_iterations, double scale) {
+
+    if (nr_iterations == 0){
+        fractal.push_back(fig);
+        return;
+    }
+
+    int ctr = 0;
+    for (auto &point: fig.points) {
+        Figure tempfig = fig;
+        auto M = scaleFigure(1/scale);
+        applyTransformation(tempfig, M);
+
+        auto T = translate(point - tempfig.points[ctr] );
+        applyTransformation(tempfig, T);
+
+//      fractal.push_back(tempfig);
+        ctr +=1;
+        generateFractal(tempfig,fractal,nr_iterations-1,scale);
+    }
+
+}
+
 
 
 

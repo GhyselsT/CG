@@ -51,6 +51,7 @@ Vector3D VecToVec3d(vector<double> center);
 
 vector<Face> triangulate(const Face& face);
 
+void generateFractal(const Figure& fig, Figures3D& fractal, const int nr_iterations, double scale);
 
 
 #endif //ENGINE_FUNCTIES_H

@@ -244,9 +244,15 @@ Figure createCylinder(const int n, const double h){
         c.points.emplace_back(Vector3D::point(cos(2*i*M_PI/n), sin(2*i*M_PI/n), h));
 
     }
+    vector<int>bv,ov;
+    for (int i = 0; i < 2*n; i+=2) {
+        bv.push_back(i);
+        ov.push_back((2*i) -(i+1));
+    }
+    c.faces.emplace_back(bv);
+    c.faces.emplace_back(ov);
     for (int i = 0; i < 2*n; i+=2) {
         c.faces.emplace_back(Face({i,(i+1)%(2*n),(i+3)%(2*n),(i+2)%(2*n)}));
-
     }
     return c;
 }
